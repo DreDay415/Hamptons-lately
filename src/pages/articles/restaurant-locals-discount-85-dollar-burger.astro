@@ -1,0 +1,318 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "Restaurant Introduces 'Local's Discount' - Only $85 for a $12 Burger";
+const description = "Chef explains: 'We're practically giving it away at that price. The $73 difference is just our way of saying 'welcome to the neighborhood.''";
+---
+
+<Layout title={title} description={description}>
+	<Header />
+	
+	<main class="main">
+		<div class="container">
+			<article class="article">
+				<header class="article-header">
+					<div class="article-meta">
+						<span class="article-date">September 1, 2025</span>
+						<span class="article-author">by Hamptons Lately Staff</span>
+					</div>
+					<h1 class="article-title">{title}</h1>
+					<p class="article-subtitle">{description}</p>
+				</header>
+
+				<div class="article-image">
+					<img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&h=600&fit=crop" alt="Luxury Restaurant" />
+				</div>
+
+				<div class="article-content">
+					<p><strong>SOUTHAMPTON, NY</strong> — In what local foodies are calling "the most Hamptons pricing ever," upscale restaurant Le Petit Château has introduced a new "Local's Discount" program that offers their signature burger for just $85, down from the regular price of $98.</p>
+
+					<p>"We're practically giving it away at that price," explained executive chef Pierre Dubois, who flew in from Paris specifically for this interview. "The $73 difference from what a burger should actually cost is just our way of saying 'welcome to the neighborhood.'"</p>
+
+					<h2>The Math Behind the Madness</h2>
+					<p>When asked to explain the pricing logic, Dubois broke it down: "A regular burger costs about $12 to make. But in the Hamptons, we add what we call the 'exclusivity premium' - that's about $86. So really, at $85, we're losing money on every burger we sell."</p>
+
+					<p>The restaurant's general manager, Sarah Williamson, elaborated: "We have to factor in the cost of our imported French buns, our artisanal ketchup that's aged in oak barrels for 18 months, and of course, the view. You're not just paying for food here - you're paying for the experience of being seen eating expensive food."</p>
+
+					<h2>Local Response</h2>
+					<p>The discount has been met with mixed reactions from actual locals. "I've lived here for 20 years, and I still can't afford to eat at most of these places," said longtime resident Mike O'Brien. "But I guess if you're a 'local' who just bought a $15 million house, $85 for a burger probably seems reasonable."</p>
+
+					<p>Weekend visitors, however, have been more enthusiastic. "This is such a great deal!" exclaimed Jennifer Park, who was visiting from Manhattan. "In the city, you'd pay at least $120 for a burger with this kind of ambiance. Plus, the waiter told me I look like I belong here, which is worth at least another $50."</p>
+
+					<h2>The Fine Print</h2>
+					<p>As with most Hamptons deals, there are some conditions. The "Local's Discount" is only available to people who can prove they've been coming to the Hamptons for at least three consecutive summers, or who can name-drop at least two local celebrities.</p>
+
+					<p>"We have a very sophisticated verification system," explained the restaurant's sommelier, who also happens to be a certified body language expert. "We can tell if someone is a real local just by how they hold their fork. If they hold it like they're afraid it might break, they're probably not from around here."</p>
+
+					<h2>What's Included</h2>
+					<p>For the $85 price tag, diners receive: one 6-ounce beef patty (sourced from cows that were "personally acquainted" with the chef), one artisanal bun (baked fresh every morning in a 200-year-old French oven), lettuce (grown hydroponically in the restaurant's rooftop garden), tomato (imported from a farm in Italy that only grows tomatoes for this restaurant), and a side of truffle fries (because regular fries are "so 2024").</p>
+
+					<p>"The fries alone are worth $45," Dubois insisted. "We use truffles that were personally harvested by monks in a remote Italian monastery. Each truffle costs more than most people's monthly rent."</p>
+
+					<h2>Local Competition</h2>
+					<p>The discount has put pressure on other local restaurants to offer similar deals. "We're considering a 'Weekend Warrior Special' where we charge $150 for a $20 Caesar salad," said the owner of a competing establishment. "But we're still working out the logistics of making a salad that expensive look worth it."</p>
+
+					<p>Some restaurants are taking a different approach. "We're thinking of introducing a 'Celebrity Sighting Fee,'" said another restaurateur. "If you see a famous person while dining, we add $200 to your bill. It's like a reverse lottery."</p>
+
+					<h2>What's Next?</h2>
+					<p>Dubois says the restaurant is already planning their next promotion: a "Winter Local's Special" where they'll offer their signature burger for just $65. "That's practically free," he said. "We're basically paying people to eat here."</p>
+
+					<p>When asked if he thought the pricing was reasonable, Dubois was philosophical: "In the Hamptons, you're not paying for food. You're paying for the privilege of saying you ate at Le Petit Château. And that, my friends, is priceless."</p>
+
+					<p><em>This article is part of our ongoing series "Hamptons Economics: When $85 for a Burger Makes Perfect Sense."</em></p>
+				</div>
+
+				<div class="article-footer">
+					<div class="article-tags">
+						<span class="tag">Restaurants</span>
+						<span class="tag">Pricing</span>
+						<span class="tag">Locals</span>
+						<span class="tag">Food</span>
+					</div>
+					<div class="article-share">
+						<h4>Share This Article</h4>
+						<div class="share-buttons">
+							<button class="share-btn">📱</button>
+							<button class="share-btn">📧</button>
+							<button class="share-btn">🔗</button>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<aside class="related-articles">
+				<h3>Related Articles</h3>
+				<div class="related-grid">
+					<a href="/articles/local-man-survives-summer-without-instagram" class="related-card">
+						<h4>Local Man Survives Entire Summer Without Instagram</h4>
+						<span class="related-date">Sep 03, 2025</span>
+					</a>
+					<a href="/articles/tesla-owner-charging-station-fire-hydrant" class="related-card">
+						<h4>Tesla Owner Shocked to Learn Charging Station is Actually Just a Fire Hydrant</h4>
+						<span class="related-date">Sep 02, 2025</span>
+					</a>
+					<a href="/articles/beach-access-restricted-locals-only" class="related-card">
+						<h4>Beach Access Restricted to People Who Actually Live Here (Just Kidding)</h4>
+						<span class="related-date">Aug 31, 2025</span>
+					</a>
+				</div>
+			</aside>
+		</div>
+	</main>
+
+	<Footer />
+</Layout>
+
+<style>
+	.main {
+		padding: 2rem 0;
+	}
+
+	.article {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.article-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.article-meta {
+		margin-bottom: 1rem;
+	}
+
+	.article-date {
+		color: #7f8c8d;
+		font-size: 0.9rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		margin-right: 1rem;
+	}
+
+	.article-author {
+		color: #7f8c8d;
+		font-style: italic;
+	}
+
+	.article-title {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		color: #2c3e50;
+		line-height: 1.2;
+	}
+
+	.article-subtitle {
+		font-size: 1.2rem;
+		color: #555;
+		font-style: italic;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.article-image {
+		margin-bottom: 2rem;
+		border-radius: 12px;
+		overflow: hidden;
+		box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+	}
+
+	.article-image img {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	.article-content {
+		font-size: 1.1rem;
+		line-height: 1.8;
+		color: #333;
+	}
+
+	.article-content h2 {
+		color: #2c3e50;
+		margin: 2rem 0 1rem 0;
+		font-size: 1.8rem;
+	}
+
+	.article-content p {
+		margin-bottom: 1.5rem;
+	}
+
+	.article-content strong {
+		color: #2c3e50;
+	}
+
+	.article-content em {
+		color: #7f8c8d;
+		font-style: italic;
+	}
+
+	.article-footer {
+		margin-top: 3rem;
+		padding-top: 2rem;
+		border-top: 1px solid #ecf0f1;
+	}
+
+	.article-tags {
+		margin-bottom: 2rem;
+	}
+
+	.tag {
+		display: inline-block;
+		background: #ecf0f1;
+		color: #2c3e50;
+		padding: 0.5rem 1rem;
+		border-radius: 20px;
+		font-size: 0.9rem;
+		margin-right: 0.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.article-share h4 {
+		margin-bottom: 1rem;
+		color: #2c3e50;
+	}
+
+	.share-buttons {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.share-btn {
+		background: #3498db;
+		color: white;
+		border: none;
+		padding: 0.75rem 1rem;
+		border-radius: 8px;
+		cursor: pointer;
+		font-size: 1.2rem;
+		transition: background-color 0.3s ease;
+	}
+
+	.share-btn:hover {
+		background: #2980b9;
+	}
+
+	.related-articles {
+		margin-top: 4rem;
+		padding-top: 3rem;
+		border-top: 2px solid #ecf0f1;
+	}
+
+	.related-articles h3 {
+		margin-bottom: 2rem;
+		color: #2c3e50;
+	}
+
+	.related-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.related-card {
+		background: white;
+		padding: 1.5rem;
+		border-radius: 8px;
+		box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.related-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 4px 25px rgba(0,0,0,0.15);
+	}
+
+	.related-card h4 {
+		color: #2c3e50;
+		margin-bottom: 0.5rem;
+		font-size: 1.1rem;
+		line-height: 1.4;
+	}
+
+	.related-date {
+		color: #7f8c8d;
+		font-size: 0.9rem;
+	}
+
+	@media (max-width: 768px) {
+		.article-title {
+			font-size: 2rem;
+		}
+		
+		.article-content {
+			font-size: 1rem;
+		}
+		
+		.related-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
+
+<script>
+	// Simple share functionality
+	document.addEventListener('DOMContentLoaded', function() {
+		const shareButtons = document.querySelectorAll('.share-btn');
+		
+		shareButtons.forEach((btn, index) => {
+			btn.addEventListener('click', function() {
+				const actions = [
+					() => navigator.share({ title: document.title, url: window.location.href }),
+					() => window.open(`mailto:?subject=${encodeURIComponent(document.title)}&body=${encodeURIComponent(window.location.href)}`),
+					() => navigator.clipboard.writeText(window.location.href).then(() => alert('Link copied!'))
+				];
+				
+				if (actions[index]) {
+					actions[index]();
+				}
+			});
+		});
+	});
+</script>

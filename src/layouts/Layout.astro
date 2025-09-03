@@ -1,0 +1,128 @@
+---
+export interface Props {
+	title: string;
+	description?: string;
+	image?: string;
+}
+
+const { title, description = "The Coverage the Hamptons Deserves", image } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image || "/og-image.jpg"} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={image || "/og-image.jpg"} />
+
+		<!-- Fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	/* Reset and base styles */
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		font-family: 'Source Sans Pro', sans-serif;
+		line-height: 1.6;
+		color: #333;
+		background-color: #fafafa;
+	}
+
+	body {
+		font-family: 'Source Sans Pro', sans-serif;
+		line-height: 1.6;
+		color: #333;
+	}
+
+	/* Typography */
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Playfair Display', serif;
+		font-weight: 700;
+		line-height: 1.2;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		color: #2c3e50;
+	}
+
+	h2 {
+		font-size: 2rem;
+		color: #34495e;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+		color: #2c3e50;
+		margin-bottom: 1rem;
+	}
+
+	h4 {
+		font-size: 1.2rem;
+		color: #34495e;
+	}
+
+	p {
+		margin-bottom: 1rem;
+		color: #555;
+	}
+
+	a {
+		color: #3498db;
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+
+	a:hover {
+		color: #2980b9;
+	}
+
+	/* Container */
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+
+	/* Responsive */
+	@media (max-width: 768px) {
+		h1 {
+			font-size: 2rem;
+		}
+		
+		h2 {
+			font-size: 1.5rem;
+		}
+		
+		.container {
+			padding: 0 15px;
+		}
+	}
+</style>

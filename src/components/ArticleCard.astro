@@ -1,0 +1,111 @@
+---
+export interface Props {
+	title: string;
+	description: string;
+	date: string;
+	image: string;
+	imageAlt: string;
+	slug: string;
+	author?: string;
+	featured?: boolean;
+}
+
+const { title, description, date, image, imageAlt, slug, author = "Hamptons Lately Staff", featured = false } = Astro.props;
+---
+
+<article class={`article-card ${featured ? 'featured' : ''}`}>
+	<div class="article-image">
+		<img src={image} alt={imageAlt} loading={featured ? "eager" : "lazy"} />
+	</div>
+	<div class="article-content">
+		<span class="article-date">{date}</span>
+		<h4><a href={`/articles/${slug}`}>{title}</a></h4>
+		<p>{description}</p>
+		<span class="author">by {author}</span>
+	</div>
+</article>
+
+<style>
+	.article-card {
+		background: white;
+		border-radius: 12px;
+		overflow: hidden;
+		box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.article-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+	}
+
+	.article-card.featured {
+		grid-column: 1 / -1;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+	}
+
+	.article-image {
+		height: 250px;
+		overflow: hidden;
+	}
+
+	.article-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+	}
+
+	.article-card:hover .article-image img {
+		transform: scale(1.05);
+	}
+
+	.article-content {
+		padding: 1.5rem;
+	}
+
+	.article-date {
+		color: #7f8c8d;
+		font-size: 0.9rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	.article-content h4 {
+		margin: 0.5rem 0 1rem 0;
+	}
+
+	.article-content h4 a {
+		color: #2c3e50;
+		font-size: 1.3rem;
+	}
+
+	.article-content h4 a:hover {
+		color: #3498db;
+	}
+
+	.article-content p {
+		color: #555;
+		line-height: 1.6;
+		margin-bottom: 1rem;
+	}
+
+	.author {
+		color: #7f8c8d;
+		font-size: 0.9rem;
+		font-style: italic;
+	}
+
+	@media (max-width: 768px) {
+		.article-card.featured {
+			grid-template-columns: 1fr;
+		}
+		
+		.article-content {
+			padding: 1rem;
+		}
+	}
+</style>

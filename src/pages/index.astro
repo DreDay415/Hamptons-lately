@@ -1,0 +1,345 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+
+// Article data
+const articles = [
+	{
+		title: "Local Man Survives Entire Summer Without Instagram",
+		description: "Heroic resident goes 90 days without posting sunset photos, beach selfies, or food pics. 'It was touch and go there for a while,' says concerned neighbors.",
+		date: "Sep 03, 2025",
+		image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+		imageAlt: "Hamptons Beach House",
+		slug: "local-man-survives-summer-without-instagram",
+		featured: true
+	},
+	{
+		title: "Tesla Owner Shocked to Learn Charging Station is Actually Just a Fire Hydrant",
+		description: "Weekend warrior spends 45 minutes trying to plug in before realizing his mistake. 'I thought it was one of those new wireless charging things,' he explained.",
+		date: "Sep 02, 2025",
+		image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop",
+		imageAlt: "Luxury Car",
+		slug: "tesla-owner-charging-station-fire-hydrant"
+	},
+	{
+		title: "Restaurant Introduces 'Local's Discount' - Only $85 for a $12 Burger",
+		description: "Chef explains: 'We're practically giving it away at that price. The $73 difference is just our way of saying 'welcome to the neighborhood.''",
+		date: "Sep 01, 2025",
+		image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=400&fit=crop",
+		imageAlt: "Restaurant",
+		slug: "restaurant-locals-discount-85-dollar-burger"
+	},
+	{
+		title: "Beach Access Restricted to People Who Actually Live Here (Just Kidding)",
+		description: "New signs installed: 'Public Beach - Private Feelings.' Locals still somehow manage to find reasons why you shouldn't be there.",
+		date: "Aug 31, 2025",
+		image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+		imageAlt: "Beach",
+		slug: "beach-access-restricted-locals-only"
+	},
+	{
+		title: "Traffic Report: It's Still Terrible, But Now With More Range Rovers",
+		description: "LIE remains the world's longest parking lot. Experts say adding more luxury SUVs might actually help - 'they're bigger, so fewer cars fit, creating more space.'",
+		date: "Aug 30, 2025",
+		image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop",
+		imageAlt: "Traffic",
+		slug: "traffic-report-terrible-range-rovers"
+	},
+	{
+		title: "Weekend Spotlight: One Thing to Worry About, One Thing to Do, One Thing That Will Make You Say 'Only in the Hamptons'",
+		description: "As always: traffic anxiety, beach yoga with strangers, and witnessing someone pay $28 for a smoothie they could make at home for $3.",
+		date: "Aug 29, 2025",
+		image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=400&fit=crop",
+		imageAlt: "Party",
+		slug: "weekend-spotlight-hamptons-guide"
+	}
+];
+
+const hamptonsQuotes = [
+	"Remember: if you can't afford it, you probably shouldn't be here.",
+	"Local tip: The best time to go to the beach is when no one else is there.",
+	"Pro tip: If you have to ask the price, you can't afford it.",
+	"Remember: 'Weekend warrior' is not a compliment in these parts.",
+	"Local wisdom: The more expensive the restaurant, the smaller the portions.",
+	"Hamptons rule: If you see a celebrity, pretend you don't recognize them.",
+	"Remember: 'Affordable' is a relative term here.",
+	"Local secret: The best parking spots are the ones you pay $50 for."
+];
+
+const randomQuote = hamptonsQuotes[Math.floor(Math.random() * hamptonsQuotes.length)];
+---
+
+<Layout title="Hamptons Lately - The Coverage the Hamptons Deserves">
+	<Header />
+	
+	<main class="main">
+		<div class="container">
+			<section class="hero">
+				<div class="hero-content">
+					<h2>Breaking News from the End of Long Island</h2>
+					<p>Where the 1% meets the 0.1% and everyone pretends to be local</p>
+					<p class="hero-quote">"{randomQuote}"</p>
+				</div>
+			</section>
+
+			<section class="latest-articles">
+				<h3>Latest Articles</h3>
+				<div class="articles-grid">
+					{articles.map((article, index) => (
+						<ArticleCard 
+							title={article.title}
+							description={article.description}
+							date={article.date}
+							image={article.image}
+							imageAlt={article.imageAlt}
+							slug={article.slug}
+							featured={article.featured}
+						/>
+					))}
+				</div>
+			</section>
+
+			<section class="weekend-section">
+				<h3>Weekend Guide</h3>
+				<div class="weekend-content">
+					<div class="weekend-item">
+						<h4>What to Worry About</h4>
+						<p>Whether your neighbor's new infinity pool is actually infinite, or just really expensive.</p>
+					</div>
+					<div class="weekend-item">
+						<h4>What to Do</h4>
+						<p>Pretend you've been coming here "forever" while asking directions to the nearest Starbucks.</p>
+					</div>
+					<div class="weekend-item">
+						<h4>What Will Make You Say "Only in the Hamptons"</h4>
+						<p>Seeing someone pay $150 for a beach umbrella that costs $25 at Target, but "it's the good kind."</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="weather-section">
+				<div class="weather-report" id="weather-report">
+					<h4>🌤️ Hamptons Weather Report</h4>
+					<p>Click for today's forecast</p>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<Footer />
+</Layout>
+
+<style>
+	.main {
+		min-height: 100vh;
+	}
+
+	.hero {
+		background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(52, 73, 94, 0.8)), 
+					url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=400&fit=crop') center/cover;
+		color: white;
+		text-align: center;
+		padding: 4rem 0;
+		margin-bottom: 3rem;
+		border-radius: 12px;
+	}
+
+	.hero-content h2 {
+		color: white;
+		margin-bottom: 1rem;
+		font-size: 2.5rem;
+	}
+
+	.hero-content p {
+		color: #ecf0f1;
+		font-size: 1.2rem;
+		max-width: 600px;
+		margin: 0 auto 1rem auto;
+	}
+
+	.hero-quote {
+		font-style: italic;
+		font-size: 1rem;
+		opacity: 0.9;
+		color: #bdc3c7;
+	}
+
+	.latest-articles {
+		margin-bottom: 4rem;
+	}
+
+	.articles-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	.weekend-section {
+		background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
+		padding: 3rem 0;
+		border-radius: 12px;
+		margin-bottom: 4rem;
+	}
+
+	.weekend-content {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	.weekend-item {
+		background: white;
+		padding: 2rem;
+		border-radius: 8px;
+		box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+		text-align: center;
+	}
+
+	.weekend-item h4 {
+		color: #e74c3c;
+		margin-bottom: 1rem;
+		font-size: 1.1rem;
+	}
+
+	.weekend-item p {
+		color: #555;
+		font-style: italic;
+	}
+
+	.weather-section {
+		margin-bottom: 4rem;
+	}
+
+	.weather-report {
+		background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+		color: white;
+		padding: 1rem;
+		border-radius: 8px;
+		text-align: center;
+		cursor: pointer;
+		transition: transform 0.2s ease;
+		max-width: 400px;
+		margin: 0 auto;
+	}
+
+	.weather-report:hover {
+		transform: scale(1.02);
+	}
+
+	.weather-report h4 {
+		margin: 0;
+		color: white;
+	}
+
+	.weather-report p {
+		margin: 0.5rem 0 0 0;
+		font-size: 0.9rem;
+		color: #ecf0f1;
+	}
+
+	@media (max-width: 768px) {
+		.hero-content h2 {
+			font-size: 2rem;
+		}
+		
+		.articles-grid {
+			grid-template-columns: 1fr;
+		}
+		
+		.weekend-content {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
+
+<script>
+	// Interactive weather report
+	document.addEventListener('DOMContentLoaded', function() {
+		const weatherReport = document.getElementById('weather-report');
+		
+		if (weatherReport) {
+			const forecasts = [
+				"Sunny with a chance of pretentiousness",
+				"Partly cloudy with scattered Range Rovers",
+				"Clear skies, but watch out for helicopter traffic",
+				"Beautiful day, perfect for Instagram photos",
+				"Weather: Expensive. Air: Elite. Vibes: Exclusive."
+			];
+			
+			weatherReport.addEventListener('click', function() {
+				const randomForecast = forecasts[Math.floor(Math.random() * forecasts.length)];
+				this.innerHTML = `
+					<h4>🌤️ Today's Forecast</h4>
+					<p style="margin: 0.5rem 0 0 0; font-style: italic;">${randomForecast}</p>
+				`;
+				
+				// Reset after 5 seconds
+				setTimeout(() => {
+					this.innerHTML = `
+						<h4>🌤️ Hamptons Weather Report</h4>
+						<p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Click for today's forecast</p>
+					`;
+				}, 5000);
+			});
+		}
+
+		// Easter egg: Press 'H' for Hamptons facts
+		document.addEventListener('keydown', function(e) {
+			if (e.key.toLowerCase() === 'h') {
+				const facts = [
+					"The Hamptons has more Range Rovers per capita than anywhere else in the world.",
+					"Local legend says if you say 'I'm a local' three times, a real estate agent appears.",
+					"The average price of a beach umbrella here could feed a family for a week.",
+					"There are more yoga studios than gas stations in the Hamptons.",
+					"The term 'weekend warrior' was invented here to describe people who think they're locals."
+				];
+				
+				const randomFact = facts[Math.floor(Math.random() * facts.length)];
+				showNotification(randomFact);
+			}
+		});
+	});
+
+	function showNotification(message) {
+		const notification = document.createElement('div');
+		notification.style.cssText = `
+			position: fixed;
+			top: 20px;
+			right: 20px;
+			background: #2c3e50;
+			color: white;
+			padding: 1rem;
+			border-radius: 8px;
+			box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+			z-index: 1000;
+			max-width: 300px;
+			animation: slideIn 0.3s ease;
+		`;
+		
+		notification.innerHTML = `
+			<h4 style="margin: 0 0 0.5rem 0; color: #3498db;">💡 Hamptons Fact</h4>
+			<p style="margin: 0; font-size: 0.9rem;">${message}</p>
+		`;
+		
+		// Add CSS animation
+		const style = document.createElement('style');
+		style.textContent = `
+			@keyframes slideIn {
+				from { transform: translateX(100%); opacity: 0; }
+				to { transform: translateX(0); opacity: 1; }
+			}
+		`;
+		document.head.appendChild(style);
+		
+		document.body.appendChild(notification);
+		
+		// Remove after 5 seconds
+		setTimeout(() => {
+			notification.remove();
+		}, 5000);
+	}
+</script>

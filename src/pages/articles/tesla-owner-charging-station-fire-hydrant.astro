@@ -1,0 +1,318 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "Tesla Owner Shocked to Learn Charging Station is Actually Just a Fire Hydrant";
+const description = "Weekend warrior spends 45 minutes trying to plug in before realizing his mistake. 'I thought it was one of those new wireless charging things,' he explained.";
+---
+
+<Layout title={title} description={description}>
+	<Header />
+	
+	<main class="main">
+		<div class="container">
+			<article class="article">
+				<header class="article-header">
+					<div class="article-meta">
+						<span class="article-date">September 2, 2025</span>
+						<span class="article-author">by Hamptons Lately Staff</span>
+					</div>
+					<h1 class="article-title">{title}</h1>
+					<p class="article-subtitle">{description}</p>
+				</header>
+
+				<div class="article-image">
+					<img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&h=600&fit=crop" alt="Tesla Car" />
+				</div>
+
+				<div class="article-content">
+					<p><strong>WATER MILL, NY</strong> — In what local Tesla enthusiasts are calling "the most Hamptons thing ever," weekend visitor Brandon Mitchell, 28, spent nearly an hour attempting to charge his Model S at what he believed was a state-of-the-art wireless charging station, only to discover it was actually a fire hydrant.</p>
+
+					<p>"I was like, 'Wow, the Hamptons really has everything,'" Mitchell recalled, still visibly embarrassed. "I mean, wireless charging? That's so cutting-edge. I thought I was living in the future."</p>
+
+					<h2>The Discovery</h2>
+					<p>The incident occurred on Sunday afternoon when Mitchell, driving his father's Tesla, noticed what appeared to be a sleek, modern charging station near the Water Mill shopping district. The red-painted hydrant, with its distinctive shape and what Mitchell described as "a very professional-looking design," seemed to him like the latest in electric vehicle technology.</p>
+
+					<p>"It had this really clean, minimalist aesthetic," Mitchell explained. "I thought, 'This is exactly what I'd expect from the Hamptons - premium charging infrastructure for premium cars.'"</p>
+
+					<h2>The Attempt</h2>
+					<p>For the next 45 minutes, Mitchell attempted various charging methods. He tried parking his Tesla as close as possible to the hydrant, experimented with different angles, and even attempted to use his phone's Tesla app to initiate charging.</p>
+
+					<p>"I was getting frustrated because the app kept saying 'No charging station detected,'" Mitchell said. "I thought maybe it was one of those new induction charging spots where you just park over it. You know, like how they're doing wireless phone charging now."</p>
+
+					<h2>Local Witnesses</h2>
+					<p>Several local residents watched the entire episode unfold, though none initially intervened. "We thought he was just being really thorough about parking," said local resident Margaret O'Connor. "You know how Tesla drivers are - they're very particular about their parking."</p>
+
+					<p>It wasn't until Mitchell got out of his car and started examining the hydrant more closely that someone finally approached him. "I was like, 'Excuse me, sir, but I think you might be confused about what that is,'" said local firefighter Tom Reynolds, who happened to be driving by.</p>
+
+					<h2>The Realization</h2>
+					<p>Mitchell's face reportedly went through several expressions in rapid succession: confusion, disbelief, embarrassment, and finally, acceptance. "I was like, 'Oh. Oh no. This is a fire hydrant, isn't it?'" he recalled. "And the firefighter was like, 'Yes, sir. It's been here since 1987.'"</p>
+
+					<p>When asked why he didn't recognize the hydrant for what it was, Mitchell was philosophical: "In the Hamptons, you expect everything to be fancy and new. I mean, even the garbage cans here look like they cost more than my car. So when I saw this red thing, I just assumed it was some kind of premium charging infrastructure."</p>
+
+					<h2>Local Response</h2>
+					<p>The incident has sparked a broader conversation about the need for more electric vehicle infrastructure in the Hamptons. "We're seeing more and more Teslas every summer," said Water Mill Mayor Jennifer Walsh. "Maybe we should consider installing actual charging stations, so people don't mistake our fire hydrants for them."</p>
+
+					<p>Local Tesla owners have also weighed in on the discussion. "I can see how this could happen," said longtime resident and Model X owner David Chen. "The Hamptons has this way of making everything look expensive and exclusive. Even the fire hydrants look like they were designed by a luxury brand."</p>
+
+					<h2>What's Next?</h2>
+					<p>Mitchell has since found a proper charging station at a local hotel, though he admits the experience has made him more cautious. "I'm definitely going to look more carefully at things before I try to plug my car into them," he said.</p>
+
+					<p>As for the fire hydrant, it continues to serve its intended purpose, though it has gained something of a local celebrity status. "People keep taking photos of it," said Reynolds. "I think it's going to be featured in next year's Hamptons tourism brochure."</p>
+
+					<p><em>This article is part of our ongoing series "Hamptons Fails: When Luxury Meets Reality."</em></p>
+				</div>
+
+				<div class="article-footer">
+					<div class="article-tags">
+						<span class="tag">Tesla</span>
+						<span class="tag">Electric Vehicles</span>
+						<span class="tag">Weekend Warriors</span>
+						<span class="tag">Charging</span>
+					</div>
+					<div class="article-share">
+						<h4>Share This Article</h4>
+						<div class="share-buttons">
+							<button class="share-btn">📱</button>
+							<button class="share-btn">📧</button>
+							<button class="share-btn">🔗</button>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<aside class="related-articles">
+				<h3>Related Articles</h3>
+				<div class="related-grid">
+					<a href="/articles/local-man-survives-summer-without-instagram" class="related-card">
+						<h4>Local Man Survives Entire Summer Without Instagram</h4>
+						<span class="related-date">Sep 03, 2025</span>
+					</a>
+					<a href="/articles/restaurant-locals-discount-85-dollar-burger" class="related-card">
+						<h4>Restaurant Introduces 'Local's Discount' - Only $85 for a $12 Burger</h4>
+						<span class="related-date">Sep 01, 2025</span>
+					</a>
+					<a href="/articles/traffic-report-terrible-range-rovers" class="related-card">
+						<h4>Traffic Report: It's Still Terrible, But Now With More Range Rovers</h4>
+						<span class="related-date">Aug 30, 2025</span>
+					</a>
+				</div>
+			</aside>
+		</div>
+	</main>
+
+	<Footer />
+</Layout>
+
+<style>
+	.main {
+		padding: 2rem 0;
+	}
+
+	.article {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.article-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.article-meta {
+		margin-bottom: 1rem;
+	}
+
+	.article-date {
+		color: #7f8c8d;
+		font-size: 0.9rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		margin-right: 1rem;
+	}
+
+	.article-author {
+		color: #7f8c8d;
+		font-style: italic;
+	}
+
+	.article-title {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		color: #2c3e50;
+		line-height: 1.2;
+	}
+
+	.article-subtitle {
+		font-size: 1.2rem;
+		color: #555;
+		font-style: italic;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.article-image {
+		margin-bottom: 2rem;
+		border-radius: 12px;
+		overflow: hidden;
+		box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+	}
+
+	.article-image img {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	.article-content {
+		font-size: 1.1rem;
+		line-height: 1.8;
+		color: #333;
+	}
+
+	.article-content h2 {
+		color: #2c3e50;
+		margin: 2rem 0 1rem 0;
+		font-size: 1.8rem;
+	}
+
+	.article-content p {
+		margin-bottom: 1.5rem;
+	}
+
+	.article-content strong {
+		color: #2c3e50;
+	}
+
+	.article-content em {
+		color: #7f8c8d;
+		font-style: italic;
+	}
+
+	.article-footer {
+		margin-top: 3rem;
+		padding-top: 2rem;
+		border-top: 1px solid #ecf0f1;
+	}
+
+	.article-tags {
+		margin-bottom: 2rem;
+	}
+
+	.tag {
+		display: inline-block;
+		background: #ecf0f1;
+		color: #2c3e50;
+		padding: 0.5rem 1rem;
+		border-radius: 20px;
+		font-size: 0.9rem;
+		margin-right: 0.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.article-share h4 {
+		margin-bottom: 1rem;
+		color: #2c3e50;
+	}
+
+	.share-buttons {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.share-btn {
+		background: #3498db;
+		color: white;
+		border: none;
+		padding: 0.75rem 1rem;
+		border-radius: 8px;
+		cursor: pointer;
+		font-size: 1.2rem;
+		transition: background-color 0.3s ease;
+	}
+
+	.share-btn:hover {
+		background: #2980b9;
+	}
+
+	.related-articles {
+		margin-top: 4rem;
+		padding-top: 3rem;
+		border-top: 2px solid #ecf0f1;
+	}
+
+	.related-articles h3 {
+		margin-bottom: 2rem;
+		color: #2c3e50;
+	}
+
+	.related-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.related-card {
+		background: white;
+		padding: 1.5rem;
+		border-radius: 8px;
+		box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.related-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 4px 25px rgba(0,0,0,0.15);
+	}
+
+	.related-card h4 {
+		color: #2c3e50;
+		margin-bottom: 0.5rem;
+		font-size: 1.1rem;
+		line-height: 1.4;
+	}
+
+	.related-date {
+		color: #7f8c8d;
+		font-size: 0.9rem;
+	}
+
+	@media (max-width: 768px) {
+		.article-title {
+			font-size: 2rem;
+		}
+		
+		.article-content {
+			font-size: 1rem;
+		}
+		
+		.related-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
+
+<script>
+	// Simple share functionality
+	document.addEventListener('DOMContentLoaded', function() {
+		const shareButtons = document.querySelectorAll('.share-btn');
+		
+		shareButtons.forEach((btn, index) => {
+			btn.addEventListener('click', function() {
+				const actions = [
+					() => navigator.share({ title: document.title, url: window.location.href }),
+					() => window.open(`mailto:?subject=${encodeURIComponent(document.title)}&body=${encodeURIComponent(window.location.href)}`),
+					() => navigator.clipboard.writeText(window.location.href).then(() => alert('Link copied!'))
+				];
+				
+				if (actions[index]) {
+					actions[index]();
+				}
+			});
+		});
+	});
+</script>
