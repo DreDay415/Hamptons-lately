@@ -1,0 +1,317 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "Beach Access Restricted to People Who Actually Live Here (Just Kidding)";
+const description = "New signs installed: 'Public Beach - Private Feelings.' Locals still somehow manage to find reasons why you shouldn't be there.";
+---
+
+<Layout title={title} description={description}>
+	<Header />
+	
+	<main class="main">
+		<div class="container">
+			<article class="article">
+				<header class="article-header">
+					<div class="article-meta">
+						<span class="article-date">August 31, 2025</span>
+						<span class="article-author">by Hamptons Lately Staff</span>
+					</div>
+					<h1 class="article-title">{title}</h1>
+					<p class="article-subtitle">{description}</p>
+				</header>
+
+				<div class="article-image">
+					<img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=600&fit=crop" alt="Hamptons Beach" />
+				</div>
+
+				<div class="article-content">
+					<p><strong>EAST HAMPTON, NY</strong> — In what local officials are calling "a complete misunderstanding," new signs have been installed at public beach access points throughout the Hamptons that read "Public Beach - Private Feelings."</p>
+
+					<p>"We want to make it clear that while the beach is technically public, the feelings about who should be there are very much private," explained East Hampton Mayor Sarah Johnson. "It's about setting the right expectations."</p>
+
+					<h2>The Sign Controversy</h2>
+					<p>The new signage has sparked debate among residents and visitors alike. "I was confused at first," said weekend visitor Michael Chen. "I thought it meant the beach was private, but then I saw people swimming. It's very Hamptons - confusing but somehow exclusive."</p>
+
+					<p>Local resident Jennifer Martinez clarified the situation: "The signs are meant to be ironic. Everyone knows the beach is public, but we like to maintain a certain... atmosphere. You know, the kind of atmosphere where you feel like you shouldn't be there unless you've been coming here for generations."</p>
+
+					<h2>Local Enforcement Techniques</h2>
+					<p>Despite the public nature of the beaches, locals have developed sophisticated methods for making visitors feel unwelcome. "We don't actually say anything," explained longtime resident Tom O'Brien. "We just look at people with this expression that says 'I can't believe you're here.' It's very effective."</p>
+
+					<p>Other techniques include:
+					- Staring at beach towels with visible confusion
+					- Asking if visitors "know where they are"
+					- Mentioning how "different" the beach was "before all the people came"
+					- Sighing loudly when someone sets up too close</p>
+
+					<h2>The "Local" Definition</h2>
+					<p>When asked what constitutes a "local," responses varied widely. "I've lived here for 25 years and I'm still not considered a local," said resident David Park. "I think you have to be born here, or at least have grandparents who were."</p>
+
+					<p>"I've been coming here every summer since I was 5, so I'm basically a local," said Manhattan resident Amanda Rodriguez. "I mean, I know where the good parking spots are, and I can pronounce 'Montauk' correctly."</p>
+
+					<h2>Beach Access Strategies</h2>
+					<p>Visitors have developed their own strategies for accessing the beaches without drawing attention. "I always bring a book that looks expensive," said weekend visitor Sarah Kim. "And I make sure to mention how much I love the 'authentic local experience' to anyone who will listen."</p>
+
+					<p>Another strategy involves timing. "I go early in the morning when the locals are still sleeping off their wine," said visitor Mike Thompson. "By the time they wake up, I'm already established and they can't really ask me to leave."</p>
+
+					<h2>What's Next?</h2>
+					<p>Mayor Johnson says the signs are part of a larger initiative to "maintain the character" of Hamptons beaches. "We're not trying to exclude anyone," she insisted. "We're just trying to make sure people understand that while they're welcome, they should feel slightly uncomfortable about it."</p>
+
+					<p>Local business owners are supportive of the initiative. "It's good for business," said restaurant owner Pierre Dubois. "When people feel like they don't belong, they're more likely to spend money trying to fit in. That's just good economics."</p>
+
+					<p><em>This article is part of our ongoing series "Hamptons Beach Culture: Where Public Access Meets Private Feelings."</em></p>
+				</div>
+
+				<div class="article-footer">
+					<div class="article-tags">
+						<span class="tag">Beach Access</span>
+						<span class="tag">Locals</span>
+						<span class="tag">Public Beaches</span>
+						<span class="tag">Hamptons Culture</span>
+					</div>
+					<div class="article-share">
+						<h4>Share This Article</h4>
+						<div class="share-buttons">
+							<button class="share-btn">📱</button>
+							<button class="share-btn">📧</button>
+							<button class="share-btn">🔗</button>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<aside class="related-articles">
+				<h3>Related Articles</h3>
+				<div class="related-grid">
+					<a href="/articles/local-man-survives-summer-without-instagram" class="related-card">
+						<h4>Local Man Survives Entire Summer Without Instagram</h4>
+						<span class="related-date">Sep 03, 2025</span>
+					</a>
+					<a href="/articles/tesla-owner-charging-station-fire-hydrant" class="related-card">
+						<h4>Tesla Owner Shocked to Learn Charging Station is Actually Just a Fire Hydrant</h4>
+						<span class="related-date">Sep 02, 2025</span>
+					</a>
+					<a href="/articles/restaurant-locals-discount-85-dollar-burger" class="related-card">
+						<h4>Restaurant Introduces 'Local's Discount' - Only $85 for a $12 Burger</h4>
+						<span class="related-date">Sep 01, 2025</span>
+					</a>
+				</div>
+			</aside>
+		</div>
+	</main>
+
+	<Footer />
+</Layout>
+
+<style>
+	.main {
+		padding: 2rem 0;
+	}
+
+	.article {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.article-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.article-meta {
+		margin-bottom: 1rem;
+	}
+
+	.article-date {
+		color: #7f8c8d;
+		font-size: 0.9rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		margin-right: 1rem;
+	}
+
+	.article-author {
+		color: #7f8c8d;
+		font-style: italic;
+	}
+
+	.article-title {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		color: #2c3e50;
+		line-height: 1.2;
+	}
+
+	.article-subtitle {
+		font-size: 1.2rem;
+		color: #555;
+		font-style: italic;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.article-image {
+		margin-bottom: 2rem;
+		border-radius: 12px;
+		overflow: hidden;
+		box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+	}
+
+	.article-image img {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	.article-content {
+		font-size: 1.1rem;
+		line-height: 1.8;
+		color: #333;
+	}
+
+	.article-content h2 {
+		color: #2c3e50;
+		margin: 2rem 0 1rem 0;
+		font-size: 1.8rem;
+	}
+
+	.article-content p {
+		margin-bottom: 1.5rem;
+	}
+
+	.article-content strong {
+		color: #2c3e50;
+	}
+
+	.article-content em {
+		color: #7f8c8d;
+		font-style: italic;
+	}
+
+	.article-footer {
+		margin-top: 3rem;
+		padding-top: 2rem;
+		border-top: 1px solid #ecf0f1;
+	}
+
+	.article-tags {
+		margin-bottom: 2rem;
+	}
+
+	.tag {
+		display: inline-block;
+		background: #ecf0f1;
+		color: #2c3e50;
+		padding: 0.5rem 1rem;
+		border-radius: 20px;
+		font-size: 0.9rem;
+		margin-right: 0.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.article-share h4 {
+		margin-bottom: 1rem;
+		color: #2c3e50;
+	}
+
+	.share-buttons {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.share-btn {
+		background: #3498db;
+		color: white;
+		border: none;
+		padding: 0.75rem 1rem;
+		border-radius: 8px;
+		cursor: pointer;
+		font-size: 1.2rem;
+		transition: background-color 0.3s ease;
+	}
+
+	.share-btn:hover {
+		background: #2980b9;
+	}
+
+	.related-articles {
+		margin-top: 4rem;
+		padding-top: 3rem;
+		border-top: 2px solid #ecf0f1;
+	}
+
+	.related-articles h3 {
+		margin-bottom: 2rem;
+		color: #2c3e50;
+	}
+
+	.related-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.related-card {
+		background: white;
+		padding: 1.5rem;
+		border-radius: 8px;
+		box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.related-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 4px 25px rgba(0,0,0,0.15);
+	}
+
+	.related-card h4 {
+		color: #2c3e50;
+		margin-bottom: 0.5rem;
+		font-size: 1.1rem;
+		line-height: 1.4;
+	}
+
+	.related-date {
+		color: #7f8c8d;
+		font-size: 0.9rem;
+	}
+
+	@media (max-width: 768px) {
+		.article-title {
+			font-size: 2rem;
+		}
+		
+		.article-content {
+			font-size: 1rem;
+		}
+		
+		.related-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
+
+<script>
+	// Simple share functionality
+	document.addEventListener('DOMContentLoaded', function() {
+		const shareButtons = document.querySelectorAll('.share-btn');
+		
+		shareButtons.forEach((btn, index) => {
+			btn.addEventListener('click', function() {
+				const actions = [
+					() => navigator.share({ title: document.title, url: window.location.href }),
+					() => window.open(`mailto:?subject=${encodeURIComponent(document.title)}&body=${encodeURIComponent(window.location.href)}`),
+					() => navigator.clipboard.writeText(window.location.href).then(() => alert('Link copied!'))
+				];
+				
+				if (actions[index]) {
+					actions[index]();
+				}
+			});
+		});
+	});
+</script>

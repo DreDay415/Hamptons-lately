@@ -1,0 +1,317 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "Traffic Report: It's Still Terrible, But Now With More Range Rovers";
+const description = "LIE remains the world's longest parking lot. Experts say adding more luxury SUVs might actually help - 'they're bigger, so fewer cars fit, creating more space.'";
+---
+
+<Layout title={title} description={description}>
+	<Header />
+	
+	<main class="main">
+		<div class="container">
+			<article class="article">
+				<header class="article-header">
+					<div class="article-meta">
+						<span class="article-date">August 30, 2025</span>
+						<span class="article-author">by Hamptons Lately Staff</span>
+					</div>
+					<h1 class="article-title">{title}</h1>
+					<p class="article-subtitle">{description}</p>
+				</header>
+
+				<div class="article-image">
+					<img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&h=600&fit=crop" alt="Traffic Jam" />
+				</div>
+
+				<div class="article-content">
+					<p><strong>LONG ISLAND, NY</strong> — In what traffic experts are calling "the most predictable news ever," the Long Island Expressway (LIE) continues to be the world's longest parking lot, with the added twist that it's now filled with even more luxury SUVs than ever before.</p>
+
+					<p>"We're seeing a fascinating phenomenon," said traffic analyst Dr. Sarah Chen. "The more Range Rovers and Mercedes G-Wagons we add to the mix, the more space we actually create. It's counterintuitive, but these larger vehicles are somehow making traffic flow better."</p>
+
+					<h2>The Science Behind the Madness</h2>
+					<p>Dr. Chen's research suggests that luxury SUVs create a "buffer zone" effect. "When you have a $150,000 Range Rover taking up the space of 1.5 regular cars, it creates more breathing room between vehicles," she explained. "Plus, people tend to give these cars more space because they're afraid of scratching them."</p>
+
+					<p>Local commuter Mike Thompson, who drives a 2012 Honda Civic, has noticed the difference. "I used to be able to squeeze between cars during traffic jams," he said. "But now with all these massive SUVs, there's no squeezing. It's like driving through a canyon of money."</p>
+
+					<h2>Weekend Warrior Migration Patterns</h2>
+					<p>Traffic patterns show that the worst congestion occurs during what locals call "The Great Migration" - Friday afternoons when Manhattan residents flee to the Hamptons, and Sunday evenings when they return.</p>
+
+					<p>"It's like watching a herd of wildebeest, but with better Instagram accounts," said traffic camera operator Jennifer Martinez. "You can actually see the traffic build up in real-time as people post 'Escaping to the Hamptons' stories while sitting in traffic."</p>
+
+					<h2>Local Adaptation Strategies</h2>
+					<p>Longtime residents have developed sophisticated strategies for dealing with the traffic. "I've learned to treat the LIE like a social event," said East Hampton resident Tom O'Brien. "I bring snacks, drinks, and make sure my phone is fully charged. Sometimes I'll FaceTime with friends who are also stuck in traffic."</p>
+
+					<p>Other strategies include:
+					- Leaving at 3 AM on Friday to beat the rush
+					- Taking the scenic route through the North Fork (adds 2 hours but feels more peaceful)
+					- Pretending to be a delivery driver to use HOV lanes
+					- Bringing a portable espresso machine for the journey</p>
+
+					<h2>The Helicopter Alternative</h2>
+					<p>With traffic getting worse, more residents are considering helicopter travel. "I'm seriously thinking about getting a helicopter license," said weekend visitor Amanda Rodriguez. "I mean, if I'm going to spend $500 on gas and parking for a weekend, I might as well spend $5,000 on a helicopter and get there in 20 minutes."</p>
+
+					<p>Local helicopter companies report a 300% increase in inquiries. "We're getting calls from people who used to think helicopters were only for celebrities," said helicopter pilot David Park. "Now they're realizing that time is money, and sitting in traffic for 4 hours is expensive."</p>
+
+					<h2>What's Next?</h2>
+					<p>Traffic experts predict that by 2026, the LIE will be completely gridlocked from Friday afternoon to Monday morning. "We're looking at a future where the expressway becomes a permanent parking lot," said Dr. Chen. "But on the bright side, it will create the world's longest tailgate party."</p>
+
+					<p>Local businesses are already adapting. "We're thinking of opening pop-up restaurants along the highway," said restaurant owner Pierre Dubois. "If people are going to be stuck in traffic for hours, they might as well have a nice meal while they wait."</p>
+
+					<p><em>This article is part of our ongoing series "Hamptons Traffic: Where Time Stands Still and Patience is Optional."</em></p>
+				</div>
+
+				<div class="article-footer">
+					<div class="article-tags">
+						<span class="tag">Traffic</span>
+						<span class="tag">LIE</span>
+						<span class="tag">Range Rovers</span>
+						<span class="tag">Weekend Warriors</span>
+					</div>
+					<div class="article-share">
+						<h4>Share This Article</h4>
+						<div class="share-buttons">
+							<button class="share-btn">📱</button>
+							<button class="share-btn">📧</button>
+							<button class="share-btn">🔗</button>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<aside class="related-articles">
+				<h3>Related Articles</h3>
+				<div class="related-grid">
+					<a href="/articles/tesla-owner-charging-station-fire-hydrant" class="related-card">
+						<h4>Tesla Owner Shocked to Learn Charging Station is Actually Just a Fire Hydrant</h4>
+						<span class="related-date">Sep 02, 2025</span>
+					</a>
+					<a href="/articles/beach-access-restricted-locals-only" class="related-card">
+						<h4>Beach Access Restricted to People Who Actually Live Here (Just Kidding)</h4>
+						<span class="related-date">Aug 31, 2025</span>
+					</a>
+					<a href="/articles/weekend-spotlight-hamptons-guide" class="related-card">
+						<h4>Weekend Spotlight: One Thing to Worry About, One Thing to Do, One Thing That Will Make You Say 'Only in the Hamptons'</h4>
+						<span class="related-date">Aug 29, 2025</span>
+					</a>
+				</div>
+			</aside>
+		</div>
+	</main>
+
+	<Footer />
+</Layout>
+
+<style>
+	.main {
+		padding: 2rem 0;
+	}
+
+	.article {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.article-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.article-meta {
+		margin-bottom: 1rem;
+	}
+
+	.article-date {
+		color: #7f8c8d;
+		font-size: 0.9rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		margin-right: 1rem;
+	}
+
+	.article-author {
+		color: #7f8c8d;
+		font-style: italic;
+	}
+
+	.article-title {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		color: #2c3e50;
+		line-height: 1.2;
+	}
+
+	.article-subtitle {
+		font-size: 1.2rem;
+		color: #555;
+		font-style: italic;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.article-image {
+		margin-bottom: 2rem;
+		border-radius: 12px;
+		overflow: hidden;
+		box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+	}
+
+	.article-image img {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	.article-content {
+		font-size: 1.1rem;
+		line-height: 1.8;
+		color: #333;
+	}
+
+	.article-content h2 {
+		color: #2c3e50;
+		margin: 2rem 0 1rem 0;
+		font-size: 1.8rem;
+	}
+
+	.article-content p {
+		margin-bottom: 1.5rem;
+	}
+
+	.article-content strong {
+		color: #2c3e50;
+	}
+
+	.article-content em {
+		color: #7f8c8d;
+		font-style: italic;
+	}
+
+	.article-footer {
+		margin-top: 3rem;
+		padding-top: 2rem;
+		border-top: 1px solid #ecf0f1;
+	}
+
+	.article-tags {
+		margin-bottom: 2rem;
+	}
+
+	.tag {
+		display: inline-block;
+		background: #ecf0f1;
+		color: #2c3e50;
+		padding: 0.5rem 1rem;
+		border-radius: 20px;
+		font-size: 0.9rem;
+		margin-right: 0.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.article-share h4 {
+		margin-bottom: 1rem;
+		color: #2c3e50;
+	}
+
+	.share-buttons {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.share-btn {
+		background: #3498db;
+		color: white;
+		border: none;
+		padding: 0.75rem 1rem;
+		border-radius: 8px;
+		cursor: pointer;
+		font-size: 1.2rem;
+		transition: background-color 0.3s ease;
+	}
+
+	.share-btn:hover {
+		background: #2980b9;
+	}
+
+	.related-articles {
+		margin-top: 4rem;
+		padding-top: 3rem;
+		border-top: 2px solid #ecf0f1;
+	}
+
+	.related-articles h3 {
+		margin-bottom: 2rem;
+		color: #2c3e50;
+	}
+
+	.related-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.related-card {
+		background: white;
+		padding: 1.5rem;
+		border-radius: 8px;
+		box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.related-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 4px 25px rgba(0,0,0,0.15);
+	}
+
+	.related-card h4 {
+		color: #2c3e50;
+		margin-bottom: 0.5rem;
+		font-size: 1.1rem;
+		line-height: 1.4;
+	}
+
+	.related-date {
+		color: #7f8c8d;
+		font-size: 0.9rem;
+	}
+
+	@media (max-width: 768px) {
+		.article-title {
+			font-size: 2rem;
+		}
+		
+		.article-content {
+			font-size: 1rem;
+		}
+		
+		.related-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
+
+<script>
+	// Simple share functionality
+	document.addEventListener('DOMContentLoaded', function() {
+		const shareButtons = document.querySelectorAll('.share-btn');
+		
+		shareButtons.forEach((btn, index) => {
+			btn.addEventListener('click', function() {
+				const actions = [
+					() => navigator.share({ title: document.title, url: window.location.href }),
+					() => window.open(`mailto:?subject=${encodeURIComponent(document.title)}&body=${encodeURIComponent(window.location.href)}`),
+					() => navigator.clipboard.writeText(window.location.href).then(() => alert('Link copied!'))
+				];
+				
+				if (actions[index]) {
+					actions[index]();
+				}
+			});
+		});
+	});
+</script>

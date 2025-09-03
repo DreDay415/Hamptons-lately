@@ -34,9 +34,6 @@ const { title, description = "The Coverage the Hamptons Deserves", image } = Ast
 
 		<!-- Fonts -->
 		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
-		
-		<!-- Color Scheme -->
-		<link rel="stylesheet" href="/src/styles/colors.css">
 	</head>
 	<body>
 		<slot />
@@ -54,14 +51,14 @@ const { title, description = "The Coverage the Hamptons Deserves", image } = Ast
 	html {
 		font-family: 'Source Sans Pro', sans-serif;
 		line-height: 1.6;
-		color: var(--text-color);
-		background-color: var(--background-color);
+		color: #333;
+		background-color: #fafafa;
 	}
 
 	body {
 		font-family: 'Source Sans Pro', sans-serif;
 		line-height: 1.6;
-		color: var(--text-color);
+		color: #333;
 	}
 
 	/* Typography */
@@ -73,38 +70,38 @@ const { title, description = "The Coverage the Hamptons Deserves", image } = Ast
 
 	h1 {
 		font-size: 2.5rem;
-		color: var(--primary-color);
+		color: #2c3e50;
 	}
 
 	h2 {
 		font-size: 2rem;
-		color: var(--secondary-color);
+		color: #34495e;
 	}
 
 	h3 {
 		font-size: 1.5rem;
-		color: var(--primary-color);
+		color: #2c3e50;
 		margin-bottom: 1rem;
 	}
 
 	h4 {
 		font-size: 1.2rem;
-		color: var(--secondary-color);
+		color: #34495e;
 	}
 
 	p {
 		margin-bottom: 1rem;
-		color: var(--text-light);
+		color: #555;
 	}
 
 	a {
-		color: var(--accent-color);
+		color: #3498db;
 		text-decoration: none;
 		transition: color 0.3s ease;
 	}
 
 	a:hover {
-		color: var(--primary-color);
+		color: #2980b9;
 	}
 
 	/* Container */
