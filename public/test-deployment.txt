@@ -1,0 +1,7 @@
+Vercel Deployment Test
+This file was created to test if Vercel is properly deploying the site.
+If you can see this, the deployment is working!
+
+Current timestamp: 2025-01-27
+Site: Hamptons Lately
+Status: Testing deployment
