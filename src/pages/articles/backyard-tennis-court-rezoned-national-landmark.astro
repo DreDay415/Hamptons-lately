@@ -117,11 +117,16 @@ const description = "Local resident's private tennis court declared a national l
 <style>
 	.main {
 		padding: 2rem 0;
+		background: white;
+		border-radius: 20px;
+		margin: 2rem;
+		box-shadow: 0 8px 30px rgba(46, 112, 97, 0.1);
 	}
 
 	.article {
 		max-width: 800px;
 		margin: 0 auto;
+		padding: 2rem;
 	}
 
 	.article-header {
@@ -150,8 +155,9 @@ const description = "Local resident's private tennis court declared a national l
 	.article-title {
 		font-size: 2.5rem;
 		margin-bottom: 1rem;
-		color: #2c3e50;
+		color: #2e7061;
 		line-height: 1.2;
+		font-weight: 700;
 	}
 
 	.article-subtitle {
@@ -182,9 +188,10 @@ const description = "Local resident's private tennis court declared a national l
 	}
 
 	.article-content h2 {
-		color: #2c3e50;
+		color: #2e7061;
 		margin: 2rem 0 1rem 0;
 		font-size: 1.8rem;
+		font-weight: 600;
 	}
 
 	.article-content p {
@@ -212,13 +219,19 @@ const description = "Local resident's private tennis court declared a national l
 
 	.tag {
 		display: inline-block;
-		background: #ecf0f1;
-		color: #2c3e50;
+		background: #2e7061;
+		color: white;
 		padding: 0.5rem 1rem;
 		border-radius: 20px;
 		font-size: 0.9rem;
 		margin-right: 0.5rem;
 		margin-bottom: 0.5rem;
+		transition: all 0.3s ease;
+	}
+
+	.tag:hover {
+		background: #225744;
+		transform: translateY(-2px);
 	}
 
 	.article-share h4 {
