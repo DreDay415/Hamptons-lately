@@ -2,12 +2,24 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import ArticleSEO from '../../components/ArticleSEO.astro';
 
 const title = "Backyard Tennis Court Rezoned as National Landmark";
 const description = "Local resident's private tennis court declared a national landmark after historians discover it was 'the first place where someone paid $500 for a tennis lesson.'";
+const publishedTime = "2025-08-25T10:00:00Z";
+const tags = ["Tennis Court", "National Landmark", "Luxury Sports", "Historical Preservation"];
+const section = "Historical Preservation";
 ---
 
 <Layout title={title} description={description}>
+	<ArticleSEO 
+		title={title}
+		description={description}
+		image="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1200&h=630&fit=crop&crop=center"
+		publishedTime={publishedTime}
+		tags={tags}
+		section={section}
+	/>
 	<Header />
 	
 	<main class="main">

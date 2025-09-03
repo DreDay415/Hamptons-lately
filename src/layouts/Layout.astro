@@ -1,4 +1,6 @@
 ---
+import { SEO } from "astro-seo";
+
 export interface Props {
 	title: string;
 	description?: string;
@@ -15,19 +17,42 @@ const { title, description = "The Coverage the Hamptons Deserves", image } = Ast
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		
-		<!-- SEO Meta Tags -->
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content={Astro.url} />
-		<meta property="og:image" content={image || "/og-image.jpg"} />
-		
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content={image || "/og-image.jpg"} />
+		<SEO
+			title={title}
+			description={description}
+			canonical={Astro.url.href}
+			openGraph={{
+				basic: {
+					title: title,
+					type: "website",
+					image: image || "/og-image.jpg",
+					url: Astro.url.href,
+				},
+				optional: {
+					description: description,
+					siteName: "Hamptons Lately",
+				}
+			}}
+			twitter={{
+				card: "summary_large_image",
+				site: "@hamptonslately",
+				creator: "@hamptonslately",
+				title: title,
+				description: description,
+				image: image || "/og-image.jpg",
+			}}
+			extend={{
+				meta: [
+					{ name: "author", content: "Hamptons Lately Staff" },
+					{ name: "robots", content: "index, follow" },
+					{ name: "viewport", content: "width=device-width, initial-scale=1.0" },
+				],
+				link: [
+					{ rel: "icon", href: "/favicon.svg" },
+					{ rel: "canonical", href: Astro.url.href },
+				]
+			}}
+		/>
 		
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">

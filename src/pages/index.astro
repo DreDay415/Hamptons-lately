@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ArticleCard from '../components/ArticleCard.astro';
+import ArticleSEO from '../components/ArticleSEO.astro';
 
 // Article data
 const articles = [
@@ -152,6 +153,13 @@ const randomQuote = hamptonsQuotes[Math.floor(Math.random() * hamptonsQuotes.len
 ---
 
 <Layout title="Hamptons Lately - The Coverage the Hamptons Deserves">
+	<ArticleSEO 
+		title="Hamptons Lately - The Coverage the Hamptons Deserves"
+		description="Your daily dose of Hamptons satire and social commentary. Breaking news from the end of Long Island where the 1% meets the 0.1% and everyone pretends to be local."
+		image="/og-image.jpg"
+		tags={["Hamptons", "Satire", "News", "Luxury", "Social Commentary"]}
+		section="Hamptons News"
+	/>
 	<Header />
 	
 	<main class="main">
