@@ -4,7 +4,6 @@ export interface Props {
 	description?: string;
 	image?: string;
 }
-
 const { title, description = "The Coverage the Hamptons Deserves", image } = Astro.props;
 ---
 
@@ -18,111 +17,167 @@ const { title, description = "The Coverage the Hamptons Deserves", image } = Ast
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		
-		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content={Astro.url} />
+		<!-- SEO Meta Tags -->
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
 		<meta property="og:image" content={image || "/og-image.jpg"} />
-
-		<!-- Twitter -->
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content={Astro.url} />
-		<meta property="twitter:title" content={title} />
-		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content={image || "/og-image.jpg"} />
-
+		
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={image || "/og-image.jpg"} />
+		
 		<!-- Fonts -->
-		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+		
+		<!-- Modern CSS Reset -->
+		<style is:global>
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			html {
+				font-size: 16px;
+				scroll-behavior: smooth;
+			}
+
+			body {
+				font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				line-height: 1.6;
+				color: #1a1a1a;
+				background-color: #ffffff;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+
+			/* Typography */
+			h1, h2, h3, h4, h5, h6 {
+				font-family: 'Playfair Display', serif;
+				font-weight: 600;
+				line-height: 1.2;
+				margin-bottom: 1rem;
+				color: #1a1a1a;
+			}
+
+			h1 { font-size: 2.5rem; }
+			h2 { font-size: 2rem; }
+			h3 { font-size: 1.75rem; }
+			h4 { font-size: 1.5rem; }
+			h5 { font-size: 1.25rem; }
+			h6 { font-size: 1.1rem; }
+
+			p {
+				margin-bottom: 1rem;
+				color: #4a4a4a;
+			}
+
+			a {
+				color: #2563eb;
+				text-decoration: none;
+				transition: all 0.3s ease;
+			}
+
+			a:hover {
+				color: #1d4ed8;
+				text-decoration: underline;
+			}
+
+			/* Container */
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 1rem;
+			}
+
+			/* Buttons */
+			.btn {
+				display: inline-block;
+				padding: 0.75rem 1.5rem;
+				background: #2563eb;
+				color: white;
+				border: none;
+				border-radius: 8px;
+				font-weight: 500;
+				text-decoration: none;
+				transition: all 0.3s ease;
+				cursor: pointer;
+			}
+
+			.btn:hover {
+				background: #1d4ed8;
+				transform: translateY(-2px);
+				box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+			}
+
+			.btn-secondary {
+				background: #f3f4f6;
+				color: #374151;
+			}
+
+			.btn-secondary:hover {
+				background: #e5e7eb;
+				box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+			}
+
+			/* Cards */
+			.card {
+				background: white;
+				border-radius: 12px;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+				transition: all 0.3s ease;
+				overflow: hidden;
+			}
+
+			.card:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+			}
+
+			/* Grid */
+			.grid {
+				display: grid;
+				gap: 2rem;
+			}
+
+			.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+			.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+			.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+			.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+			/* Responsive */
+			@media (max-width: 768px) {
+				.container {
+					padding: 0 0.75rem;
+				}
+				
+				h1 { font-size: 2rem; }
+				h2 { font-size: 1.75rem; }
+				h3 { font-size: 1.5rem; }
+				
+				.grid-cols-2,
+				.grid-cols-3,
+				.grid-cols-4 {
+					grid-template-columns: 1fr;
+				}
+			}
+
+			@media (max-width: 1024px) {
+				.grid-cols-3,
+				.grid-cols-4 {
+					grid-template-columns: repeat(2, 1fr);
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
-
-<style is:global>
-	/* Reset and base styles */
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
-
-	html {
-		font-family: 'Source Sans Pro', sans-serif;
-		line-height: 1.6;
-		color: #333;
-		background-color: #fafafa;
-	}
-
-	body {
-		font-family: 'Source Sans Pro', sans-serif;
-		line-height: 1.6;
-		color: #333;
-	}
-
-	/* Typography */
-	h1, h2, h3, h4, h5, h6 {
-		font-family: 'Playfair Display', serif;
-		font-weight: 700;
-		line-height: 1.2;
-	}
-
-	h1 {
-		font-size: 2.5rem;
-		color: #2c3e50;
-	}
-
-	h2 {
-		font-size: 2rem;
-		color: #34495e;
-	}
-
-	h3 {
-		font-size: 1.5rem;
-		color: #2c3e50;
-		margin-bottom: 1rem;
-	}
-
-	h4 {
-		font-size: 1.2rem;
-		color: #34495e;
-	}
-
-	p {
-		margin-bottom: 1rem;
-		color: #555;
-	}
-
-	a {
-		color: #3498db;
-		text-decoration: none;
-		transition: color 0.3s ease;
-	}
-
-	a:hover {
-		color: #2980b9;
-	}
-
-	/* Container */
-	.container {
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 0 20px;
-	}
-
-	/* Responsive */
-	@media (max-width: 768px) {
-		h1 {
-			font-size: 2rem;
-		}
-		
-		h2 {
-			font-size: 1.5rem;
-		}
-		
-		.container {
-			padding: 0 15px;
-		}
-	}
-</style>
