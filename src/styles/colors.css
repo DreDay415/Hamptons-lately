@@ -1,0 +1,67 @@
+/* 🎨 Hamptons Lately Color Schemes */
+
+:root {
+  /* Current Ocean & Sand Theme */
+  --primary-color: #2c3e50;      /* Deep Blue */
+  --secondary-color: #34495e;     /* Navy */
+  --accent-color: #3498db;        /* Ocean Blue */
+  --text-color: #333;             /* Dark Gray */
+  --text-light: #555;             /* Medium Gray */
+  --text-muted: #7f8c8d;         /* Light Gray */
+  --background-color: #fafafa;    /* Off White */
+  --white: #ffffff;
+  --success: #27ae60;             /* Green */
+  --warning: #f39c12;             /* Orange */
+  --error: #e74c3c;               /* Red */
+}
+
+/* 🌅 Beach & Sunset Theme (Uncomment to use) */
+/*
+:root {
+  --primary-color: #2d5a27;      /* Sage Green */
+  --secondary-color: #e67e22;     /* Sunset Orange */
+  --accent-color: #f39c12;        /* Warm Yellow */
+  --text-color: #2c3e50;         /* Dark Blue */
+  --text-light: #34495e;          /* Navy */
+  --text-muted: #7f8c8d;         /* Light Gray */
+  --background-color: #fefefe;    /* Pure White */
+  --white: #ffffff;
+  --success: #27ae60;             /* Green */
+  --warning: #e67e22;             /* Orange */
+  --error: #e74c3c;               /* Red */
+}
+*/
+
+/* 💎 Luxury Gold & Navy Theme (Uncomment to use) */
+/*
+:root {
+  --primary-color: #1a1a2e;      /* Deep Navy */
+  --secondary-color: #d4af37;     /* Gold */
+  --accent-color: #c5a572;        /* Warm Gold */
+  --text-color: #2c3e50;         /* Dark Blue */
+  --text-light: #34495e;          /* Navy */
+  --text-muted: #7f8c8d;         /* Light Gray */
+  --background-color: #fafafa;    /* Off White */
+  --white: #ffffff;
+  --success: #27ae60;             /* Green */
+  --warning: #f39c12;             /* Orange */
+  --error: #e74c3c;               /* Red */
+}
+*/
+
+/* 🏖️ Hamptons Summer Theme (Uncomment to use) */
+/*
+:root {
+  --primary-color: #1e3a8a;      /* Royal Blue */
+  --secondary-color: #f59e0b;     /* Amber */
+  --accent-color: #10b981;        /* Emerald */
+  --text-color: #1f2937;         /* Dark Gray */
+  --text-light: #374151;          /* Medium Gray */
+  --text-muted: #6b7280;         /* Light Gray */
+  --background-color: #f9fafb;    /* Light Gray */
+  --white: #ffffff;
+  --success: #059669;             /* Green */
+  --warning: #d97706;             /* Orange */
+  --error: #dc2626;               /* Red */
+}
+*/
