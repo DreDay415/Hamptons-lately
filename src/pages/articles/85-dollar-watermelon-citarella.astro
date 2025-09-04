@@ -47,6 +47,13 @@ const description = "Local roads become impassable as former indoor cyclists tak
 					<h2>🚗 The Traffic Impact</h2>
 					<p>The influx of outdoor cyclists has created unprecedented traffic problems. "We're seeing 20-minute delays on roads that normally take 5 minutes to drive," said Martinez. "The cyclists are riding in groups of 10-15 people, taking up entire lanes, and they seem to think they have the right of way everywhere."</p>
 
+					<div class="article-image-inline">
+						<img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop&crop=center" alt="Traffic Jam with Range Rovers" />
+						<div class="image-caption">
+							<em>Traffic Jam in East Hampton - Range Rovers and luxury SUVs stuck behind groups of Peloton riders who have taken over the main roads, causing delays that have frustrated local motorists and disrupted the usual flow of Hamptons traffic.</em>
+						</div>
+					</div>
+
 					<p>Local motorists are frustrated. "I was late to my tennis lesson because of these people," said East Hampton resident Amanda Rodriguez. "I mean, I get that they want to exercise, but do they have to do it on the main road during rush hour? Can't they go back to their living rooms?"</p>
 
 					<h2>🎯 The Learning Curve</h2>
@@ -178,6 +185,19 @@ const description = "Local roads become impassable as former indoor cyclists tak
 	}
 
 	.article-image img {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	.article-image-inline {
+		margin: 2rem 0;
+		border-radius: 12px;
+		overflow: hidden;
+		box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+	}
+
+	.article-image-inline img {
 		width: 100%;
 		height: auto;
 		display: block;
