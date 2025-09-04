@@ -1,0 +1,105 @@
+---
+// ArticleHero.astro - Optimized hero image for articles
+import OptimizedImage from './OptimizedImage.astro';
+
+interface Props {
+  src: string;
+  alt: string;
+  title: string;
+  subtitle?: string;
+  credit?: string;
+}
+
+const { src, alt, title, subtitle, credit } = Astro.props;
+---
+
+<div class="article-hero">
+  <div class="hero-image-container">
+    <OptimizedImage
+      src={src}
+      alt={alt}
+      width="1200"
+      height="800"
+      class="hero-image"
+      priority={true}
+      sizes="(max-width: 768px) 100vw, 1200px"
+    />
+    
+    {credit && (
+      <div class="image-credit">
+        <small>Photo: {credit}</small>
+      </div>
+    )}
+  </div>
+  
+  <div class="hero-content">
+    <h1 class="hero-title">{title}</h1>
+    {subtitle && <p class="hero-subtitle">{subtitle}</p>}
+  </div>
+</div>
+
+<style>
+  .article-hero {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .hero-image-container {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .hero-image:hover {
+    transform: scale(1.02);
+  }
+
+  .image-credit {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+  }
+
+  .hero-content {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2e7061;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: #666;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+  }
+</style>

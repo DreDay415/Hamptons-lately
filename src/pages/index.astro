@@ -5,136 +5,110 @@ import Footer from '../components/Footer.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import ArticleSEO from '../components/ArticleSEO.astro';
 
-// Article data
-const articles = [
+// Article data - organized for Marin Lately style layout
+const featuredArticles = [
+	{
+		title: "85 Dollar Watermelon Declared Local Emergency",
+		description: "Citarella's latest price gouging scandal leaves locals in shock as watermelon prices reach unprecedented heights, forcing residents to choose between fruit and rent.",
+		date: "Sep 03, 2025",
+		image: "https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?w=1200&h=800&fit=crop&crop=center",
+		imageAlt: "Expensive Watermelon at Citarella",
+		slug: "85-dollar-watermelon-citarella",
+		featured: true,
+		category: "Breaking News"
+	},
 	{
 		title: "Backyard Tennis Court Rezoned as National Landmark",
 		description: "Local resident's private tennis court declared a national landmark after historians discover it was 'the first place where someone paid $500 for a tennis lesson.'",
-		date: "Aug 25, 2025",
-		image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=800&h=500&fit=crop&crop=center",
+		date: "Sep 02, 2025",
+		image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=800&h=600&fit=crop&crop=center",
 		imageAlt: "Luxury Tennis Court",
 		slug: "backyard-tennis-court-rezoned-national-landmark",
-		featured: true
-	},
-	{
-		title: "Champagne Shortage Declared Local Emergency",
-		description: "Hamptons officials declare state of emergency as champagne supplies dwindle, forcing residents to drink 'regular wine' and causing widespread panic among socialites.",
-		date: "Aug 24, 2025",
-		image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&h=500&fit=crop&crop=center",
-		imageAlt: "Champagne Bottles",
-		slug: "champagne-shortage-declared-local-emergency"
-	},
-	{
-		title: "Neighbors Outraged After Fence Somehow Larger Than Their Ego",
-		description: "Local residents file complaints after discovering that a neighbor's fence is actually larger than their collective sense of self-importance, causing unprecedented neighborhood drama.",
-		date: "Aug 23, 2025",
-		image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=500&fit=crop&crop=center",
-		imageAlt: "Luxury Fence",
-		slug: "neighbors-outraged-fence-larger-than-ego"
-	},
-	{
-		title: "Hamptons Traffic Report: Still Terrible, Now With More Range Rovers",
-		description: "LIE remains the world's longest parking lot as luxury SUV density reaches critical mass, creating traffic patterns that defy physics and common sense.",
-		date: "Aug 22, 2025",
-		image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=500&fit=crop&crop=center",
-		imageAlt: "Traffic Jam with Range Rovers",
-		slug: "hamptons-traffic-report-still-terrible-range-rovers"
-	},
-	{
-		title: "Whale Sighted, Mistaken for 'New Minimalist Yacht Design'",
-		description: "Local yacht enthusiasts excitedly photograph what they believe is a revolutionary new minimalist yacht design, only to discover it's just a humpback whale.",
-		date: "Aug 21, 2025",
-		image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=500&fit=crop&crop=center",
-		imageAlt: "Humpback Whale",
-		slug: "whale-sighted-mistaken-minimalist-yacht"
-	},
-	{
-		title: "Meditation Studio Offers Class Where You Just Pay to Breathe",
-		description: "New Hamptons wellness center charges $200 per session for 'Premium Breathing Experience,' claiming it's 'the most exclusive way to inhale and exhale.'",
-		date: "Aug 20, 2025",
-		image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&crop=center",
-		imageAlt: "Luxury Meditation Studio",
-		slug: "meditation-studio-offers-class-pay-to-breathe"
-	},
-	{
-		title: "Hamptons Traffic Snarled After Peloton Riders Discover the Outdoors",
-		description: "Local roads become impassable as former indoor cyclists take to the streets, causing unprecedented traffic jams and confusion among motorists.",
-		date: "Aug 19, 2025",
-		image: "https://images.unsplash.com/photo-1544191696-102dbdaeeaa1?w=800&h=500&fit=crop&crop=center",
-		imageAlt: "Peloton Riders on Road",
-		slug: "hamptons-traffic-snarled-peloton-riders-discover-outdoors"
-	},
-	{
-		title: "Local Realtor Admits Half the Listings Are Just Elaborate Psychological Experiments",
-		description: "East Hampton real estate agent confesses that many luxury home listings are designed to test buyer psychology and market manipulation techniques.",
-		date: "Aug 18, 2025",
-		image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=500&fit=crop&crop=center",
-		imageAlt: "Luxury Real Estate",
-		slug: "local-realtor-admits-listings-psychological-experiments"
-	},
-	{
-		title: "Man Discovers $85 Dollar Watermelon at Citarella, Wife Says That's Normal",
-		description: "Local resident shocked by watermelon price, but wife explains: 'The heirloom tomatoes are $25 each, so the watermelon is 3 and a half tomatoes.'",
-		date: "Aug 28, 2025",
-		image: "https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?w=800&h=500&fit=crop&crop=center",
-		imageAlt: "Expensive Watermelon",
-		slug: "85-dollar-watermelon-citarella"
-	},
-	{
-		title: "Best Bar in Sag Harbor; The Discussion Continues: Murf's Vs Corner Bar",
-		description: "Local debate rages on about which establishment serves the best cocktails and atmosphere, with both sides claiming victory based on completely different criteria.",
-		date: "Aug 27, 2025",
-		image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&h=500&fit=crop&crop=center",
-		imageAlt: "Sag Harbor Bar Scene",
-		slug: "best-bar-sag-harbor-murfs-corner-bar"
-	},
-	{
-		title: "Infinity Pool Isn't Infinite — Contractor Sued!",
-		description: "Local homeowner discovers that 'infinity pool' actually has edges, files lawsuit claiming false advertising and 'emotional distress' from finite swimming experience.",
-		date: "Aug 26, 2025",
-		image: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&h=500&fit=crop&crop=center",
-		imageAlt: "Infinity Pool",
-		slug: "infinity-pool-isnt-infinite-contractor-sued"
-	},
-	{
-		title: "Local Man Survives Summer Without Instagram",
-		description: "East Hampton resident goes three months without social media, discovers 'real life' exists outside of carefully curated photos.",
-		date: "Aug 30, 2025",
-		image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=500&fit=crop&crop=center",
-		imageAlt: "Hamptons Beach House",
-		slug: "local-man-survives-summer-without-instagram"
-	},
-	{
-		title: "Tesla Owner Charging Station Fire Hydrant",
-		description: "Local Tesla owner discovers innovative charging solution using fire hydrant, claims it's 'more reliable than Supercharger network.'",
-		date: "Aug 29, 2025",
-		image: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800&h=500&fit=crop&crop=center",
-		imageAlt: "Tesla Charging",
-		slug: "tesla-owner-charging-station-fire-hydrant"
-	},
-	{
-		title: "Restaurant Locals Discount 85 Dollar Burger",
-		description: "East Hampton eatery introduces 'locals only' pricing, reducing $85 burger to $75 for residents who can prove they 'actually live here.'",
-		date: "Aug 31, 2025",
-		image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=500&fit=crop&crop=center",
-		imageAlt: "Expensive Burger",
-		slug: "restaurant-locals-discount-85-dollar-burger"
-	},
-	{
-		title: "Beach Access Restricted Locals Only",
-		description: "New ordinance requires proof of residency for beach access, causing confusion among weekend visitors who 'definitely feel like locals.'",
-		date: "Sep 01, 2025",
-		image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=500&fit=crop&crop=center",
-		imageAlt: "Beach Access",
-		slug: "beach-access-restricted-locals-only"
+		category: "Local News"
 	},
 	{
 		title: "Weekend Spotlight: Hamptons Guide",
 		description: "One thing to worry about, one thing to do, one thing that will make you say 'Only in the Hamptons' this weekend.",
 		date: "Sep 02, 2025",
-		image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop&crop=center",
+		image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&crop=center",
 		imageAlt: "Weekend Guide",
-		slug: "weekend-spotlight-hamptons-guide"
+		slug: "weekend-spotlight-hamptons-guide",
+		category: "Weekend Guide"
+	}
+];
+
+const latestArticles = [
+	{
+		title: "Champagne Shortage Declared Local Emergency",
+		description: "Hamptons officials declare state of emergency as champagne supplies dwindle, forcing residents to drink 'regular wine' and causing widespread panic among socialites.",
+		date: "Sep 01, 2025",
+		image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&h=300&fit=crop&crop=center",
+		imageAlt: "Champagne Bottles",
+		slug: "champagne-shortage-declared-local-emergency",
+		category: "Breaking News"
+	},
+	{
+		title: "Neighbors Outraged After Fence Somehow Larger Than Their Ego",
+		description: "Local residents file complaints after discovering that a neighbor's fence is actually larger than their collective sense of self-importance.",
+		date: "Aug 31, 2025",
+		image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&crop=center",
+		imageAlt: "Luxury Fence",
+		slug: "neighbors-outraged-fence-larger-than-ego",
+		category: "Local Drama"
+	},
+	{
+		title: "Hamptons Traffic Report: Still Terrible, Now With More Range Rovers",
+		description: "LIE remains the world's longest parking lot as luxury SUV density reaches critical mass, creating traffic patterns that defy physics.",
+		date: "Aug 30, 2025",
+		image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop&crop=center",
+		imageAlt: "Traffic Jam with Range Rovers",
+		slug: "hamptons-traffic-report-still-terrible-range-rovers",
+		category: "Traffic"
+	},
+	{
+		title: "Whale Sighted, Mistaken for 'New Minimalist Yacht Design'",
+		description: "Local yacht enthusiasts excitedly photograph what they believe is a revolutionary new minimalist yacht design, only to discover it's just a humpback whale.",
+		date: "Aug 29, 2025",
+		image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop&crop=center",
+		imageAlt: "Humpback Whale",
+		slug: "whale-sighted-mistaken-minimalist-yacht",
+		category: "Wildlife"
+	},
+	{
+		title: "Meditation Studio Offers Class Where You Just Pay to Breathe",
+		description: "New Hamptons wellness center charges $200 per session for 'Premium Breathing Experience,' claiming it's 'the most exclusive way to inhale and exhale.'",
+		date: "Aug 28, 2025",
+		image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop&crop=center",
+		imageAlt: "Luxury Meditation Studio",
+		slug: "meditation-studio-offers-class-pay-to-breathe",
+		category: "Wellness"
+	},
+	{
+		title: "Local Man Survives Summer Without Instagram",
+		description: "East Hampton resident goes three months without social media, discovers 'real life' exists outside of carefully curated photos.",
+		date: "Aug 27, 2025",
+		image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop&crop=center",
+		imageAlt: "Hamptons Beach House",
+		slug: "local-man-survives-summer-without-instagram",
+		category: "Lifestyle"
+	},
+	{
+		title: "Infinity Pool Isn't Infinite — Contractor Sued!",
+		description: "Local homeowner discovers that 'infinity pool' actually has edges, files lawsuit claiming false advertising and 'emotional distress' from finite swimming experience.",
+		date: "Aug 26, 2025",
+		image: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&h=300&fit=crop&crop=center",
+		imageAlt: "Infinity Pool",
+		slug: "infinity-pool-isnt-infinite-contractor-sued",
+		category: "Legal"
+	},
+	{
+		title: "Best Bar in Sag Harbor; The Discussion Continues: Murf's Vs Corner Bar",
+		description: "Local debate rages on about which establishment serves the best cocktails and atmosphere, with both sides claiming victory based on completely different criteria.",
+		date: "Aug 25, 2025",
+		image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=400&h=300&fit=crop&crop=center",
+		imageAlt: "Sag Harbor Bar Scene",
+		slug: "best-bar-sag-harbor-murfs-corner-bar",
+		category: "Dining"
 	}
 ];
 
@@ -167,28 +141,23 @@ const randomQuote = hamptonsQuotes[Math.floor(Math.random() * hamptonsQuotes.len
 		<section class="hero">
 			<div class="container">
 				<div class="hero-content">
-					<h1>Breaking News from the End of Long Island</h1>
-					<p class="hero-subtitle">Where the 1% meets the 0.1% and everyone pretends to be local</p>
+					<h1>Hamptons Lately</h1>
+					<p class="hero-subtitle">The Coverage the Hamptons Deserves</p>
 					<div class="hero-quote">
 						<blockquote>"{randomQuote}"</blockquote>
-					</div>
-					<div class="hero-actions">
-						<a href="#latest-articles" class="btn">Read Latest News</a>
-						<a href="/about" class="btn btn-secondary">About Us</a>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- Latest Articles Section -->
-		<section id="latest-articles" class="latest-articles">
+		<!-- Featured Articles Section -->
+		<section class="featured-articles">
 			<div class="container">
 				<div class="section-header">
-					<h2>Latest Articles</h2>
-					<p>Your daily dose of Hamptons satire and social commentary</p>
+					<h2>Featured Articles</h2>
 				</div>
-				<div class="articles-grid">
-					{articles.map((article, index) => (
+				<div class="featured-grid">
+					{featuredArticles.map((article, index) => (
 						<ArticleCard 
 							title={article.title}
 							description={article.description}
@@ -197,8 +166,48 @@ const randomQuote = hamptonsQuotes[Math.floor(Math.random() * hamptonsQuotes.len
 							imageAlt={article.imageAlt}
 							slug={article.slug}
 							featured={article.featured}
+							category={article.category}
 						/>
 					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- Latest Articles Section -->
+		<section class="latest-articles">
+			<div class="container">
+				<div class="section-header">
+					<h2>Latest Articles</h2>
+					<a href="/articles" class="view-all-link">View All →</a>
+				</div>
+				<div class="latest-grid">
+					{latestArticles.map((article, index) => (
+						<ArticleCard 
+							title={article.title}
+							description={article.description}
+							date={article.date}
+							image={article.image}
+							imageAlt={article.imageAlt}
+							slug={article.slug}
+							category={article.category}
+						/>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- Newsletter Section -->
+		<section class="newsletter-section">
+			<div class="container">
+				<div class="newsletter-card">
+					<div class="newsletter-content">
+						<h2>Subscribe to our newsletter</h2>
+						<p>Get all the latest Hamptons news delivered straight to your inbox. No spam, just the good stuff.</p>
+						<form class="newsletter-form">
+							<input type="email" placeholder="Enter your email address" required />
+							<button type="submit" class="btn">Subscribe</button>
+						</form>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -229,19 +238,6 @@ const randomQuote = hamptonsQuotes[Math.floor(Math.random() * hamptonsQuotes.len
 				</div>
 			</div>
 		</section>
-
-		<!-- Weather Section -->
-		<section class="weather-section">
-			<div class="container">
-				<div class="weather-card" id="weather-report">
-					<div class="weather-icon">🌤️</div>
-					<div class="weather-content">
-						<h3>Hamptons Weather Report</h3>
-						<p>Click for today's forecast</p>
-					</div>
-				</div>
-			</div>
-		</section>
 	</main>
 
 	<Footer />
@@ -250,13 +246,14 @@ const randomQuote = hamptonsQuotes[Math.floor(Math.random() * hamptonsQuotes.len
 <style>
 	.main {
 		min-height: 100vh;
+		background: #f8fafc;
 	}
 
-	/* Hero Section */
+	/* Hero Section - Marin Lately Style */
 	.hero {
 		background: linear-gradient(135deg, #2e7061 0%, #225744 100%);
 		color: white;
-		padding: 6rem 0;
+		padding: 4rem 0 3rem 0;
 		text-align: center;
 		position: relative;
 		overflow: hidden;
@@ -281,31 +278,31 @@ const randomQuote = hamptonsQuotes[Math.floor(Math.random() * hamptonsQuotes.len
 	}
 
 	.hero h1 {
-		font-size: 3.5rem;
+		font-size: 3rem;
 		font-weight: 700;
-		margin-bottom: 1.5rem;
+		margin-bottom: 1rem;
 		color: white;
 		text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 	}
 
 	.hero-subtitle {
-		font-size: 1.25rem;
-		margin-bottom: 2rem;
+		font-size: 1.1rem;
+		margin-bottom: 1.5rem;
 		color: #cbd5e1;
 		font-weight: 400;
 	}
 
 	.hero-quote {
-		margin: 2rem 0;
-		padding: 2rem;
+		margin: 1.5rem 0;
+		padding: 1.5rem;
 		background: rgba(255, 255, 255, 0.1);
-		border-radius: 16px;
+		border-radius: 12px;
 		backdrop-filter: blur(10px);
 		border: 1px solid rgba(255, 255, 255, 0.2);
 	}
 
 	.hero-quote blockquote {
-		font-size: 1.1rem;
+		font-size: 1rem;
 		font-style: italic;
 		color: #ffffff;
 		margin: 0;
@@ -314,7 +311,7 @@ const randomQuote = hamptonsQuotes[Math.floor(Math.random() * hamptonsQuotes.len
 
 	.hero-quote blockquote::before {
 		content: open-quote;
-		font-size: 2rem;
+		font-size: 1.5rem;
 		color: #ffffff;
 		line-height: 0;
 		margin-right: 0.5rem;
@@ -323,71 +320,157 @@ const randomQuote = hamptonsQuotes[Math.floor(Math.random() * hamptonsQuotes.len
 
 	.hero-quote blockquote::after {
 		content: close-quote;
-		font-size: 2rem;
+		font-size: 1.5rem;
 		color: #ffffff;
 		line-height: 0;
 		margin-left: 0.5rem;
 		vertical-align: -0.4em;
 	}
 
-	.hero-actions {
-		display: flex;
-		gap: 1rem;
-		justify-content: center;
-		flex-wrap: wrap;
+	/* Featured Articles Section - Above the fold */
+	.featured-articles {
+		padding: 3rem 0;
+		background: white;
+		margin: 0;
+	}
+
+	.featured-grid {
+		display: grid;
+		grid-template-columns: 2fr 1fr 1fr;
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	/* Latest Articles Section */
+	.latest-articles {
+		padding: 3rem 0;
+		background: #f8fafc;
+	}
+
+	.latest-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 1.5rem;
 		margin-top: 2rem;
 	}
 
 	/* Section Headers */
 	.section-header {
-		text-align: center;
-		margin-bottom: 3rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 2rem;
 	}
 
 	.section-header h2 {
-		font-size: 2.5rem;
-		margin-bottom: 1rem;
+		font-size: 2rem;
+		margin: 0;
 		color: #2e7061;
+		font-weight: 700;
 	}
 
 	.section-header p {
-		font-size: 1.1rem;
+		font-size: 1rem;
 		color: #6b7280;
-		max-width: 600px;
+		margin: 0;
+	}
+
+	.view-all-link {
+		color: #2e7061;
+		text-decoration: none;
+		font-weight: 500;
+		font-size: 1rem;
+		transition: color 0.3s ease;
+	}
+
+	.view-all-link:hover {
+		color: #225744;
+		text-decoration: underline;
+	}
+
+	/* Newsletter Section */
+	.newsletter-section {
+		padding: 3rem 0;
+		background: white;
+	}
+
+	.newsletter-card {
+		background: linear-gradient(135deg, #2e7061 0%, #225744 100%);
+		color: white;
+		padding: 3rem;
+		border-radius: 16px;
+		text-align: center;
+		box-shadow: 0 10px 30px rgba(46, 112, 97, 0.2);
+	}
+
+	.newsletter-content h2 {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+		color: white;
+	}
+
+	.newsletter-content p {
+		font-size: 1.1rem;
+		margin-bottom: 2rem;
+		color: #cbd5e1;
+		max-width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.newsletter-form {
+		display: flex;
+		gap: 1rem;
+		max-width: 400px;
 		margin: 0 auto;
 	}
 
-	/* Latest Articles Section */
-	.latest-articles {
-		padding: 5rem 0;
-		background: #f8fafc;
+	.newsletter-form input {
+		flex: 1;
+		padding: 0.75rem 1rem;
+		border: none;
+		border-radius: 8px;
+		font-size: 1rem;
 	}
 
-	.articles-grid {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 2rem;
+	.newsletter-form input:focus {
+		outline: none;
+		box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+	}
+
+	.newsletter-form .btn {
+		background: white;
+		color: #2e7061;
+		border: none;
+		padding: 0.75rem 1.5rem;
+		border-radius: 8px;
+		font-weight: 600;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.newsletter-form .btn:hover {
+		background: #f8fafc;
+		transform: translateY(-2px);
 	}
 
 	/* Weekend Section */
 	.weekend-section {
-		padding: 5rem 0;
+		padding: 3rem 0;
 		background: white;
-		border-radius: 20px;
-		margin: 2rem 0;
-		box-shadow: 0 8px 30px rgba(46, 112, 97, 0.1);
 	}
 
 	.weekend-grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 2rem;
+		margin-top: 2rem;
 	}
 
 	.weekend-card {
 		background: white;
 		padding: 2rem;
-		border-radius: 16px;
+		border-radius: 12px;
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 		border: 1px solid #f1f5f9;
 		text-align: center;
@@ -400,7 +483,7 @@ const randomQuote = hamptonsQuotes[Math.floor(Math.random() * hamptonsQuotes.len
 	}
 
 	.weekend-icon {
-		font-size: 3rem;
+		font-size: 2.5rem;
 		margin-bottom: 1rem;
 	}
 
@@ -415,53 +498,14 @@ const randomQuote = hamptonsQuotes[Math.floor(Math.random() * hamptonsQuotes.len
 		line-height: 1.6;
 	}
 
-	/* Weather Section */
-	.weather-section {
-		padding: 3rem 0;
-		background: white;
-		border-radius: 20px;
-		margin: 2rem 0;
-		box-shadow: 0 8px 30px rgba(46, 112, 97, 0.1);
-	}
-
-	.weather-card {
-		background: linear-gradient(135deg, #2e7061 0%, #225744 100%);
-		color: white;
-		padding: 2rem;
-		border-radius: 16px;
-		display: flex;
-		align-items: center;
-		gap: 1.5rem;
-		max-width: 500px;
-		margin: 0 auto;
-		cursor: pointer;
-		transition: all 0.3s ease;
-		box-shadow: 0 10px 25px rgba(46, 112, 97, 0.3);
-	}
-
-	.weather-card:hover {
-		transform: translateY(-2px);
-		box-shadow: 0 20px 40px rgba(46, 112, 97, 0.4);
-	}
-
-	.weather-icon {
-		font-size: 3rem;
-	}
-
-	.weather-content h3 {
-		margin: 0 0 0.5rem 0;
-		color: white;
-	}
-
-	.weather-content p {
-		margin: 0;
-		color: #cbd5e1;
-	}
-
 	/* Responsive Design */
 	@media (max-width: 1024px) {
-		.articles-grid {
-			grid-template-columns: repeat(2, 1fr);
+		.featured-grid {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		.latest-grid {
+			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 		}
 
 		.weekend-grid {
@@ -469,44 +513,9 @@ const randomQuote = hamptonsQuotes[Math.floor(Math.random() * hamptonsQuotes.len
 		}
 	}
 
-	/* Enhanced Latest Articles Styling */
-	.latest-articles {
-		background: white;
-		border-radius: 20px;
-		margin: 2rem 0;
-		box-shadow: 0 8px 30px rgba(46, 112, 97, 0.1);
-		padding: 3rem 0;
-	}
-
-	.section-header {
-		text-align: center;
-		margin-bottom: 3rem;
-	}
-
-	.section-header h2 {
-		color: #2e7061;
-		font-size: 2.5rem;
-		margin-bottom: 1rem;
-		font-weight: 700;
-	}
-
-	.section-header p {
-		color: #666;
-		font-size: 1.1rem;
-		max-width: 600px;
-		margin: 0 auto;
-	}
-
-	.articles-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-		gap: 2rem;
-		padding: 0 2rem;
-	}
-
 	@media (max-width: 768px) {
 		.hero {
-			padding: 4rem 0;
+			padding: 3rem 0 2rem 0;
 		}
 
 		.hero h1 {
@@ -514,30 +523,38 @@ const randomQuote = hamptonsQuotes[Math.floor(Math.random() * hamptonsQuotes.len
 		}
 
 		.hero-subtitle {
-			font-size: 1.1rem;
+			font-size: 1rem;
 		}
 
-		.hero-actions {
-			flex-direction: column;
-			align-items: center;
+		.featured-grid {
+			grid-template-columns: 1fr;
 		}
 
-		.articles-grid,
+		.latest-grid,
 		.weekend-grid {
 			grid-template-columns: 1fr;
 		}
 
+		.section-header {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 1rem;
+		}
+
 		.section-header h2 {
-			font-size: 2rem;
+			font-size: 1.75rem;
 		}
 
-		.latest-articles,
-		.weekend-section {
-			padding: 3rem 0;
+		.newsletter-form {
+			flex-direction: column;
 		}
 
-		.articles-grid {
-			padding: 0 1rem;
+		.newsletter-content h2 {
+			font-size: 1.75rem;
+		}
+
+		.newsletter-content p {
+			font-size: 1rem;
 		}
 	}
 </style>

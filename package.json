@@ -11,5 +11,8 @@
   "dependencies": {
     "astro": "^5.13.5",
     "astro-seo": "^0.8.4"
+  },
+  "devDependencies": {
+    "vercel": "^47.0.4"
   }
 }

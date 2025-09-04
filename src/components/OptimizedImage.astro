@@ -1,0 +1,70 @@
+---
+// OptimizedImage.astro - WebP optimized image component with fallbacks
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  class?: string;
+  lazy?: boolean;
+  priority?: boolean; // For above-the-fold images
+  sizes?: string; // For responsive images
+}
+
+const { 
+  src, 
+  alt, 
+  width, 
+  height, 
+  class: className, 
+  lazy = true,
+  priority = false,
+  sizes = "100vw"
+} = Astro.props;
+
+// Generate WebP version path
+const webpSrc = src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+const hasWebP = src !== webpSrc;
+
+// Determine loading strategy
+const loading = priority ? 'eager' : (lazy ? 'lazy' : 'eager');
+
+// Generate srcset for responsive images if width is provided
+const generateSrcSet = (baseSrc: string, baseWidth: number) => {
+  const multipliers = [1, 1.5, 2];
+  return multipliers
+    .map(mult => `${baseSrc.replace(/\.(webp|jpg|jpeg|png)$/i, `@${mult}x.$1`)} ${mult}x`)
+    .join(', ');
+};
+---
+
+{hasWebP ? (
+  <picture>
+    <source 
+      srcset={webpSrc} 
+      type="image/webp"
+      {sizes}
+    >
+    <img 
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      class={className}
+      loading={loading}
+      decoding="async"
+      {sizes}
+    >
+  </picture>
+) : (
+  <img 
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    class={className}
+    loading={loading}
+    decoding="async"
+    {sizes}
+  >
+)}

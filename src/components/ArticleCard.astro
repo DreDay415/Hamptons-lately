@@ -8,8 +8,9 @@ export interface Props {
 	slug: string;
 	author?: string;
 	featured?: boolean;
+	category?: string;
 }
-const { title, description, date, image, imageAlt, slug, author = "Hamptons Lately Staff", featured = false } = Astro.props;
+const { title, description, date, image, imageAlt, slug, author = "Hamptons Lately Staff", featured = false, category = "Hamptons News" } = Astro.props;
 ---
 
 <article class={`article-card ${featured ? 'featured' : ''}`}>
@@ -22,14 +23,14 @@ const { title, description, date, image, imageAlt, slug, author = "Hamptons Late
 		</div>
 		<div class="article-content">
 			<div class="article-meta">
+				<span class="article-category">{category}</span>
 				<span class="article-date">{date}</span>
-				<span class="article-author">by {author}</span>
 			</div>
 			<h4 class="article-title">{title}</h4>
 			<p class="article-description">{description}</p>
 			<div class="article-footer">
 				<span class="read-time">3 min read</span>
-				<span class="category">Hamptons News</span>
+				<span class="article-author">by {author}</span>
 			</div>
 		</div>
 	</a>
@@ -121,6 +122,17 @@ const { title, description, date, image, imageAlt, slug, author = "Hamptons Late
 		font-size: 0.875rem;
 	}
 
+	.article-category {
+		background: #2e7061;
+		color: white;
+		padding: 0.25rem 0.75rem;
+		border-radius: 20px;
+		font-size: 0.75rem;
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
 	.article-date {
 		color: #6b7280;
 		font-weight: 500;
@@ -129,6 +141,7 @@ const { title, description, date, image, imageAlt, slug, author = "Hamptons Late
 	.article-author {
 		color: #9ca3af;
 		font-style: italic;
+		font-size: 0.875rem;
 	}
 
 	.article-title {
@@ -169,14 +182,7 @@ const { title, description, date, image, imageAlt, slug, author = "Hamptons Late
 		font-weight: 500;
 	}
 
-	.category {
-		background: #f3f4f6;
-		color: #374151;
-		padding: 0.25rem 0.75rem;
-		border-radius: 20px;
-		font-size: 0.75rem;
-		font-weight: 500;
-	}
+
 
 	/* Featured article styling */
 	.article-card.featured .article-title {
