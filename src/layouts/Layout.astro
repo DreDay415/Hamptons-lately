@@ -60,8 +60,18 @@ const { title, description = "The Coverage the Hamptons Deserves", image } = Ast
 			a{color:#2e7061;text-decoration:none;transition:color 0.3s ease}
 			a:hover{color:#225744;text-decoration:underline}
 			.container{max-width:1200px;margin:0 auto;padding:0 1rem}
+			/* Article Content Container for Readability */
+			.article-container{
+				background:white;
+				border-radius:16px;
+				box-shadow:0 8px 30px rgba(46,112,97,0.1);
+				margin:2rem 0;
+				overflow:hidden
+			}
+			.article-container .container{padding:3rem 2rem}
 			@media (max-width:768px){
 				.container{padding:0 0.75rem}
+				.article-container .container{padding:2rem 1rem}
 				h1{font-size:2rem}
 				h2{font-size:1.75rem}
 				h3{font-size:1.5rem}
