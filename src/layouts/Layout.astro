@@ -117,12 +117,25 @@ const { title, description = "The Coverage the Hamptons Deserves", image } = Ast
 				text-decoration: underline;
 			}
 
-			/* Container */
-			.container {
-				max-width: 1200px;
-				margin: 0 auto;
-				padding: 0 1rem;
-			}
+					/* Container */
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 1rem;
+		}
+
+		/* Article Content Container */
+		.article-container {
+			background: white;
+			border-radius: 16px;
+			box-shadow: 0 8px 30px rgba(46, 112, 97, 0.1);
+			margin: 2rem 0;
+			overflow: hidden;
+		}
+
+		.article-container .container {
+			padding: 3rem 2rem;
+		}
 
 			/* Buttons */
 			.btn {
