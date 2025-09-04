@@ -2,24 +2,12 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import ArticleSEO from '../../components/ArticleSEO.astro';
 
 const title = "Backyard Tennis Court Rezoned as National Landmark";
 const description = "Local resident's private tennis court declared a national landmark after historians discover it was 'the first place where someone paid $500 for a tennis lesson.'";
-const publishedTime = "2025-08-25T10:00:00Z";
-const tags = ["Tennis Court", "National Landmark", "Luxury Sports", "Historical Preservation"];
-const section = "Historical Preservation";
 ---
 
-<Layout title={title} description={description}>
-	<ArticleSEO 
-		title={title}
-		description={description}
-		image="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=1200&h=630&fit=crop&crop=center"
-		publishedTime={publishedTime}
-		tags={tags}
-		section={section}
-	/>
+<Layout title={title} description={description} image="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1200&h=630&fit=crop&crop=center">
 	<Header />
 	
 	<main class="main">
@@ -36,10 +24,7 @@ const section = "Historical Preservation";
 				</header>
 
 				<div class="article-image">
-					<img src="https://i.imgur.com/aocVTsG.jpg" alt="Professional Tennis Court - The backyard tennis court that achieved national landmark status" />
-					<div class="image-caption">
-						<em>Private Tennis Court - The backyard tennis court that made history by becoming the first private court to be declared a national landmark, proving that in the Hamptons, even recreational facilities can achieve historical significance.</em>
-					</div>
+					<img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=1200&h=600&fit=crop&crop=center" alt="Luxury Tennis Court" />
 				</div>
 
 				<div class="article-content">
@@ -190,16 +175,6 @@ const section = "Historical Preservation";
 		border-radius: 12px;
 		overflow: hidden;
 		box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-	}
-
-	.image-caption {
-		margin-top: 0.75rem;
-		padding: 0 1rem;
-		text-align: center;
-		font-size: 0.9rem;
-		color: #666;
-		line-height: 1.4;
-		font-style: italic;
 	}
 
 	.article-image img {

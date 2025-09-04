@@ -1,4 +1,6 @@
 ---
+import OptimizedImage from './OptimizedImage.astro';
+
 export interface Props {
 	title: string;
 	description: string;
@@ -16,7 +18,14 @@ const { title, description, date, image, imageAlt, slug, author = "Hamptons Late
 <article class={`article-card ${featured ? 'featured' : ''}`}>
 	<a href={`/articles/${slug}`} class="card-link">
 		<div class="article-image">
-			<img src={image} alt={imageAlt} loading={featured ? "eager" : "lazy"} />
+			<OptimizedImage 
+				src={image} 
+				alt={imageAlt} 
+				width={800}
+				height={450}
+				priority={featured}
+				lazy={!featured}
+			/>
 			<div class="image-overlay">
 				<span class="read-more">Read Article →</span>
 			</div>
@@ -42,20 +51,14 @@ const { title, description, date, image, imageAlt, slug, author = "Hamptons Late
 		border-radius: 16px;
 		overflow: hidden;
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-		transition: all 0.3s ease;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
 		border: 1px solid #f1f5f9;
 		height: 100%;
-		cursor: pointer;
 	}
 
 	.article-card:hover {
-		transform: translateY(-8px);
-		box-shadow: 0 25px 50px rgba(46, 112, 97, 0.2);
-		border-color: #2e7061;
-	}
-
-	.article-card.featured {
-		grid-column: span 2;
+		transform: translateY(-4px);
+		box-shadow: 0 20px 25px rgba(46, 112, 97, 0.15);
 	}
 
 	.card-link {
@@ -69,17 +72,6 @@ const { title, description, date, image, imageAlt, slug, author = "Hamptons Late
 		position: relative;
 		overflow: hidden;
 		aspect-ratio: 16/9;
-	}
-
-	.article-image img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		transition: transform 0.3s ease;
-	}
-
-	.article-card:hover .article-image img {
-		transform: scale(1.05);
 	}
 
 	.image-overlay {
@@ -104,7 +96,6 @@ const { title, description, date, image, imageAlt, slug, author = "Hamptons Late
 		color: white;
 		font-weight: 600;
 		font-size: 1.1rem;
-		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 	}
 
 	.article-content {
@@ -123,25 +114,17 @@ const { title, description, date, image, imageAlt, slug, author = "Hamptons Late
 	}
 
 	.article-category {
-		background: #2e7061;
-		color: white;
+		background: #f3f4f6;
+		color: #374151;
 		padding: 0.25rem 0.75rem;
 		border-radius: 20px;
 		font-size: 0.75rem;
 		font-weight: 500;
-		text-transform: uppercase;
-		letter-spacing: 0.5px;
 	}
 
 	.article-date {
 		color: #6b7280;
 		font-weight: 500;
-	}
-
-	.article-author {
-		color: #9ca3af;
-		font-style: italic;
-		font-size: 0.875rem;
 	}
 
 	.article-title {
@@ -182,33 +165,15 @@ const { title, description, date, image, imageAlt, slug, author = "Hamptons Late
 		font-weight: 500;
 	}
 
-
-
-	/* Featured article styling */
-	.article-card.featured .article-title {
-		font-size: 1.5rem;
+	.article-author {
+		color: #9ca3af;
+		font-style: italic;
+		font-size: 0.875rem;
 	}
 
-	.article-card.featured .article-description {
-		font-size: 1.1rem;
-	}
-
-	/* Responsive */
 	@media (max-width: 768px) {
-		.article-card.featured {
-			grid-column: span 1;
-		}
-
 		.article-content {
 			padding: 1rem;
-		}
-
-		.article-title {
-			font-size: 1.1rem;
-		}
-
-		.article-description {
-			font-size: 0.9rem;
 		}
 	}
 </style>
