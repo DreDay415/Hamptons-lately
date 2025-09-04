@@ -1,0 +1,364 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+
+const title = "Real Estate - Hamptons Lately";
+const description = "The latest in Hamptons real estate: from $50M beachfront mansions to the psychology behind luxury listings.";
+
+// Real estate-focused articles
+const realEstateArticles = [
+	{
+		title: "Local Realtor Admits Listings Are 'Psychological Experiments'",
+		description: "Real estate agent reveals that most luxury listings are designed to test how much money people are willing to spend on 'the Hamptons lifestyle.'",
+		date: "September 2, 2025",
+		image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=800&fit=crop&crop=center",
+		imageAlt: "Luxury Real Estate",
+		slug: "local-realtor-admits-listings-psychological-experiments",
+		category: "Real Estate"
+	},
+	{
+		title: "Neighbors Outraged Over Fence 'Larger Than Ego'",
+		description: "Local residents file complaints about a 12-foot privacy fence that blocks their view of the ocean, claiming it violates 'the spirit of the Hamptons.'",
+		date: "August 29, 2025",
+		image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=800&fit=crop&crop=center",
+		imageAlt: "Luxury Fence",
+		slug: "neighbors-outraged-fence-larger-than-ego",
+		category: "Real Estate"
+	},
+	{
+		title: "Backyard Tennis Court Rezoned as National Landmark",
+		description: "Local resident's private tennis court declared a national landmark after historians discover it was 'the first place where someone paid $500 for a tennis lesson.'",
+		date: "August 25, 2025",
+		image: "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=1200&h=800&fit=crop&crop=center",
+		imageAlt: "Professional Tennis Court",
+		slug: "backyard-tennis-court-rezoned-national-landmark",
+		category: "Real Estate"
+	},
+	{
+		title: "Infinity Pool Isn't Infinite — Contractor Sued!",
+		description: "Local homeowner discovers that his $2 million infinity pool has a visible edge, leading to a lawsuit that could change how luxury pools are marketed in the Hamptons.",
+		date: "August 22, 2025",
+		image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=800&fit=crop&crop=center",
+		imageAlt: "Infinity Pool",
+		slug: "infinity-pool-isnt-infinite-contractor-sued",
+		category: "Real Estate"
+	}
+];
+---
+
+<Layout title={title} description={description}>
+	<Header />
+	
+	<main class="main">
+		<div class="container">
+			<div class="page-header">
+				<h1>Real Estate</h1>
+				<p class="page-subtitle">Where luxury meets absurdity in the Hamptons property market</p>
+			</div>
+
+			<section class="articles-section">
+				<div class="articles-grid">
+					{realEstateArticles.map(article => (
+						<ArticleCard 
+							title={article.title}
+							description={article.description}
+							date={article.date}
+							image={article.image}
+							imageAlt={article.imageAlt}
+							slug={article.slug}
+							category={article.category}
+						/>
+					))}
+				</div>
+			</section>
+
+			<section class="market-watch">
+				<h2>Market Watch</h2>
+				<div class="market-stats">
+					<div class="market-item">
+						<span class="market-number">$47.2M</span>
+						<span class="market-label">Average Beachfront Price</span>
+						<span class="market-change">+23% from last year</span>
+					</div>
+					<div class="market-item">
+						<span class="market-number">$12.5M</span>
+						<span class="market-label">Average Inland Price</span>
+						<span class="market-change">+18% from last year</span>
+					</div>
+					<div class="market-item">
+						<span class="market-number">$2.1M</span>
+						<span class="market-label">Average Pool Cost</span>
+						<span class="market-change">+31% from last year</span>
+					</div>
+					<div class="market-item">
+						<span class="market-number">$850K</span>
+						<span class="market-label">Average Fence Cost</span>
+						<span class="market-change">+45% from last year</span>
+					</div>
+				</div>
+			</section>
+
+			<section class="luxury-features">
+				<h2>This Week's Most Ridiculous Features</h2>
+				<div class="features-grid">
+					<div class="feature-card">
+						<h3>🏖️ Beach Access</h3>
+						<p><strong>$2M Beach Staircase</strong> - Private stairs leading to a public beach, because walking from the street is for peasants.</p>
+					</div>
+					<div class="feature-card">
+						<h3>🌊 Ocean View</h3>
+						<p><strong>$5M View Enhancement</strong> - Special windows that make the ocean look "more blue" than it actually is.</p>
+					</div>
+					<div class="feature-card">
+						<h3>🚁 Helipad</h3>
+						<p><strong>$1.5M Landing Pad</strong> - Because driving from Manhattan takes too long, even in a helicopter.</p>
+					</div>
+					<div class="feature-card">
+						<h3>🍷 Wine Cellar</h3>
+						<p><strong>$3M Climate Control</strong> - Temperature-controlled room for wine that costs more than most people's houses.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="realtor-quotes">
+				<h2>Realtor Quotes of the Week</h2>
+				<div class="quotes-grid">
+					<blockquote class="quote-card">
+						<p>"This property has 'unlimited potential' - which is realtor speak for 'needs $2 million in renovations.'"</p>
+						<cite>— Sarah Chen, East Hampton Realty</cite>
+					</blockquote>
+					<blockquote class="quote-card">
+						<p>"The ocean view is 'partially obstructed' - meaning you can see water if you stand on the roof and squint."</p>
+						<cite>— Michael Rodriguez, Sag Harbor Properties</cite>
+					</blockquote>
+					<blockquote class="quote-card">
+						<p>"This is a 'unique opportunity' - which means it's been on the market for three years and the price keeps dropping."</p>
+						<cite>— Jennifer Thompson, Montauk Real Estate</cite>
+					</blockquote>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<Footer />
+</Layout>
+
+<style>
+	.main {
+		min-height: 100vh;
+		background: #f8fafc;
+		padding: 2rem 0;
+	}
+
+	.page-header {
+		text-align: center;
+		margin-bottom: 3rem;
+		padding: 2rem 0;
+		background: linear-gradient(135deg, #2e7061 0%, #225744 100%);
+		border-radius: 16px;
+		color: white;
+	}
+
+	.page-header h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		margin: 0 0 1rem 0;
+		background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.page-subtitle {
+		font-size: 1.2rem;
+		color: #cbd5e1;
+		margin: 0;
+		font-weight: 300;
+	}
+
+	.articles-section {
+		margin-bottom: 4rem;
+	}
+
+	.articles-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	.market-watch {
+		background: white;
+		border-radius: 16px;
+		padding: 3rem;
+		box-shadow: 0 8px 30px rgba(46, 112, 97, 0.1);
+		margin-bottom: 3rem;
+	}
+
+	.market-watch h2 {
+		font-size: 2rem;
+		color: #2e7061;
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+
+	.market-stats {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 2rem;
+	}
+
+	.market-item {
+		text-align: center;
+		padding: 1.5rem;
+		background: #f8fafc;
+		border-radius: 12px;
+		border: 2px solid #e2e8f0;
+	}
+
+	.market-number {
+		display: block;
+		font-size: 2rem;
+		font-weight: 700;
+		color: #2e7061;
+		margin-bottom: 0.5rem;
+	}
+
+	.market-label {
+		display: block;
+		font-size: 0.9rem;
+		color: #64748b;
+		margin-bottom: 0.5rem;
+		font-weight: 500;
+	}
+
+	.market-change {
+		display: block;
+		font-size: 0.8rem;
+		color: #10b981;
+		font-weight: 600;
+	}
+
+	.luxury-features {
+		background: white;
+		border-radius: 16px;
+		padding: 3rem;
+		box-shadow: 0 8px 30px rgba(46, 112, 97, 0.1);
+		margin-bottom: 3rem;
+	}
+
+	.luxury-features h2 {
+		font-size: 2rem;
+		color: #2e7061;
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.feature-card {
+		background: #f8fafc;
+		border: 2px solid #e2e8f0;
+		border-radius: 12px;
+		padding: 1.5rem;
+		transition: all 0.3s ease;
+	}
+
+	.feature-card:hover {
+		border-color: #2e7061;
+		transform: translateY(-4px);
+		box-shadow: 0 8px 25px rgba(46, 112, 97, 0.15);
+	}
+
+	.feature-card h3 {
+		font-size: 1.1rem;
+		color: #2e7061;
+		margin: 0 0 1rem 0;
+		font-weight: 600;
+	}
+
+	.feature-card p {
+		color: #64748b;
+		line-height: 1.6;
+		margin: 0;
+		font-size: 0.95rem;
+	}
+
+	.realtor-quotes {
+		background: linear-gradient(135deg, #2e7061 0%, #225744 100%);
+		border-radius: 16px;
+		padding: 3rem;
+		color: white;
+	}
+
+	.realtor-quotes h2 {
+		font-size: 2rem;
+		margin-bottom: 2rem;
+		text-align: center;
+		color: white;
+	}
+
+	.quotes-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	.quote-card {
+		background: rgba(255, 255, 255, 0.1);
+		border-radius: 12px;
+		padding: 2rem;
+		backdrop-filter: blur(10px);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		margin: 0;
+	}
+
+	.quote-card p {
+		font-size: 1.1rem;
+		line-height: 1.6;
+		margin: 0 0 1rem 0;
+		font-style: italic;
+		color: #e2e8f0;
+	}
+
+	.quote-card cite {
+		font-size: 0.9rem;
+		color: #cbd5e1;
+		font-style: normal;
+		font-weight: 500;
+	}
+
+	@media (max-width: 768px) {
+		.page-header h1 {
+			font-size: 2.5rem;
+		}
+
+		.articles-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.market-stats {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.features-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.quotes-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.market-watch,
+		.luxury-features,
+		.realtor-quotes {
+			padding: 2rem;
+		}
+	}
+</style>

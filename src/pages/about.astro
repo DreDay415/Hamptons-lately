@@ -1,0 +1,434 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "About - Hamptons Lately";
+const description = "Learn about Hamptons Lately - the satirical news source that covers the Hamptons with the irreverence it deserves.";
+---
+
+<Layout title={title} description={description}>
+	<Header />
+	
+	<main class="main">
+		<div class="container">
+			<div class="page-header">
+				<h1>About Hamptons Lately</h1>
+				<p class="page-subtitle">The Coverage the Hamptons Deserves</p>
+			</div>
+
+			<section class="about-content">
+				<div class="content-grid">
+					<div class="main-content">
+						<h2>Our Mission</h2>
+						<p>Hamptons Lately was born from a simple observation: the Hamptons have become so absurdly expensive and pretentious that they practically satirize themselves. We're just here to document it.</p>
+						
+						<p>From $85 watermelons to infinity pools that aren't actually infinite, we cover the real news that matters to anyone who's ever wondered how a beach house could cost more than a small country's GDP.</p>
+
+						<h2>What We Cover</h2>
+						<div class="coverage-areas">
+							<div class="coverage-item">
+								<h3>🏖️ Beach Life</h3>
+								<p>From private beach access to $200 beach chairs, we cover the luxury of pretending you own the ocean.</p>
+							</div>
+							<div class="coverage-item">
+								<h3>🏠 Real Estate</h3>
+								<p>When a tennis court becomes a national landmark, you know the property market has jumped the shark.</p>
+							</div>
+							<div class="coverage-item">
+								<h3>🍾 Social Scene</h3>
+								<p>Champagne shortages, Instagram addiction, and the eternal quest to be seen at the right places.</p>
+							</div>
+							<div class="coverage-item">
+								<h3>🚗 Traffic & Transportation</h3>
+								<p>Because nothing says luxury like sitting in traffic for 6 hours to travel 100 miles.</p>
+							</div>
+						</div>
+
+						<h2>Our Philosophy</h2>
+						<p>We believe that when life gives you lemons, you should make lemonade. When life gives you a $50 million beach house, you should probably question your life choices. But hey, at least you'll have a great view while you're doing it.</p>
+
+						<blockquote class="mission-quote">
+							<p>"The Hamptons aren't just a place—they're a state of mind. A very expensive, slightly delusional state of mind."</p>
+							<cite>— The Hamptons Lately Editorial Team</cite>
+						</blockquote>
+					</div>
+
+					<div class="sidebar">
+						<div class="sidebar-card">
+							<h3>📊 By the Numbers</h3>
+							<div class="stat">
+								<span class="stat-number">$47.2M</span>
+								<span class="stat-label">Average beachfront home price</span>
+							</div>
+							<div class="stat">
+								<span class="stat-number">$85</span>
+								<span class="stat-label">Price of a single watermelon</span>
+							</div>
+							<div class="stat">
+								<span class="stat-number">6</span>
+								<span class="stat-label">Hours to drive 100 miles</span>
+							</div>
+							<div class="stat">
+								<span class="stat-number">847</span>
+								<span class="stat-label">Average Instagram posts per summer</span>
+							</div>
+						</div>
+
+						<div class="sidebar-card">
+							<h3>🎯 Our Values</h3>
+							<ul class="values-list">
+								<li>✨ Embracing the absurdity</li>
+								<li>📸 Documenting the madness</li>
+								<li>🏖️ Questioning beach access fees</li>
+								<li>🍾 Celebrating champagne shortages</li>
+								<li>🚁 Counting helicopter sightings</li>
+							</ul>
+						</div>
+
+						<div class="sidebar-card">
+							<h3>📧 Contact Us</h3>
+							<p>Have a tip about a $100 hamburger or a fence that's larger than someone's ego? We want to hear about it.</p>
+							<div class="contact-info">
+								<p><strong>Email:</strong> tips@hamptonslately.com</p>
+								<p><strong>Instagram:</strong> @hamptonslately</p>
+								<p><strong>Office:</strong> The beach (when we can afford parking)</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="team-section">
+				<h2>Meet the Team</h2>
+				<div class="team-grid">
+					<div class="team-member">
+						<div class="member-avatar">📰</div>
+						<h3>Editor-in-Chief</h3>
+						<p>Former Manhattan resident who moved to the Hamptons and immediately started questioning their life choices.</p>
+					</div>
+					<div class="team-member">
+						<div class="member-avatar">📸</div>
+						<h3>Photo Editor</h3>
+						<p>Specializes in capturing the perfect angle of Range Rovers in traffic and sunsets that cost $500 to photograph.</p>
+					</div>
+					<div class="team-member">
+						<div class="member-avatar">🏠</div>
+						<h3>Real Estate Reporter</h3>
+						<p>Expert in translating realtor speak like "cozy" (tiny) and "charming" (needs $2M in renovations).</p>
+					</div>
+					<div class="team-member">
+						<div class="member-avatar">🍾</div>
+						<h3>Social Scene Correspondent</h3>
+						<p>Attends parties to document champagne consumption and Instagram post frequency per hour.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="disclaimer">
+				<h2>Legal Disclaimer</h2>
+				<p><strong>Important:</strong> Hamptons Lately is a satirical news publication. While our stories are inspired by the very real absurdity of Hamptons life, they should not be taken as factual reporting. If you're looking for serious real estate advice, please consult a professional (and maybe reconsider your life choices).</p>
+				<p>All prices, statistics, and quotes are either exaggerated for comedic effect or completely made up. Any resemblance to actual events, persons, or $85 watermelons is purely coincidental.</p>
+			</section>
+		</div>
+	</main>
+
+	<Footer />
+</Layout>
+
+<style>
+	.main {
+		min-height: 100vh;
+		background: #f8fafc;
+		padding: 2rem 0;
+	}
+
+	.page-header {
+		text-align: center;
+		margin-bottom: 3rem;
+		padding: 2rem 0;
+		background: linear-gradient(135deg, #2e7061 0%, #225744 100%);
+		border-radius: 16px;
+		color: white;
+	}
+
+	.page-header h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		margin: 0 0 1rem 0;
+		background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.page-subtitle {
+		font-size: 1.2rem;
+		color: #cbd5e1;
+		margin: 0;
+		font-weight: 300;
+	}
+
+	.about-content {
+		margin-bottom: 4rem;
+	}
+
+	.content-grid {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 3rem;
+		align-items: start;
+	}
+
+	.main-content {
+		background: white;
+		border-radius: 16px;
+		padding: 3rem;
+		box-shadow: 0 8px 30px rgba(46, 112, 97, 0.1);
+	}
+
+	.main-content h2 {
+		font-size: 1.8rem;
+		color: #2e7061;
+		margin: 0 0 1.5rem 0;
+		font-weight: 600;
+	}
+
+	.main-content p {
+		color: #64748b;
+		line-height: 1.7;
+		margin-bottom: 1.5rem;
+		font-size: 1rem;
+	}
+
+	.coverage-areas {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
+		margin: 2rem 0;
+	}
+
+	.coverage-item {
+		background: #f8fafc;
+		border: 2px solid #e2e8f0;
+		border-radius: 12px;
+		padding: 1.5rem;
+		transition: all 0.3s ease;
+	}
+
+	.coverage-item:hover {
+		border-color: #2e7061;
+		transform: translateY(-2px);
+	}
+
+	.coverage-item h3 {
+		font-size: 1.1rem;
+		color: #2e7061;
+		margin: 0 0 1rem 0;
+		font-weight: 600;
+	}
+
+	.coverage-item p {
+		color: #64748b;
+		line-height: 1.6;
+		margin: 0;
+		font-size: 0.95rem;
+	}
+
+	.mission-quote {
+		background: linear-gradient(135deg, #2e7061 0%, #225744 100%);
+		border-radius: 12px;
+		padding: 2rem;
+		margin: 2rem 0;
+		color: white;
+		border: none;
+	}
+
+	.mission-quote p {
+		font-size: 1.2rem;
+		font-style: italic;
+		margin: 0 0 1rem 0;
+		color: #e2e8f0;
+		line-height: 1.6;
+	}
+
+	.mission-quote cite {
+		font-size: 0.9rem;
+		color: #cbd5e1;
+		font-style: normal;
+		font-weight: 500;
+	}
+
+	.sidebar {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.sidebar-card {
+		background: white;
+		border-radius: 16px;
+		padding: 2rem;
+		box-shadow: 0 8px 30px rgba(46, 112, 97, 0.1);
+	}
+
+	.sidebar-card h3 {
+		font-size: 1.3rem;
+		color: #2e7061;
+		margin: 0 0 1.5rem 0;
+		font-weight: 600;
+	}
+
+	.stat {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 1.5rem;
+		padding-bottom: 1.5rem;
+		border-bottom: 1px solid #e2e8f0;
+	}
+
+	.stat:last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+		border-bottom: none;
+	}
+
+	.stat-number {
+		font-size: 1.8rem;
+		font-weight: 700;
+		color: #2e7061;
+		margin-bottom: 0.5rem;
+	}
+
+	.stat-label {
+		font-size: 0.9rem;
+		color: #64748b;
+		line-height: 1.4;
+	}
+
+	.values-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.values-list li {
+		padding: 0.75rem 0;
+		border-bottom: 1px solid #e2e8f0;
+		color: #64748b;
+		font-size: 0.95rem;
+	}
+
+	.values-list li:last-child {
+		border-bottom: none;
+	}
+
+	.contact-info p {
+		margin: 0.5rem 0;
+		font-size: 0.9rem;
+		color: #64748b;
+	}
+
+	.team-section {
+		background: white;
+		border-radius: 16px;
+		padding: 3rem;
+		box-shadow: 0 8px 30px rgba(46, 112, 97, 0.1);
+		margin-bottom: 3rem;
+	}
+
+	.team-section h2 {
+		font-size: 2rem;
+		color: #2e7061;
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+
+	.team-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+	}
+
+	.team-member {
+		text-align: center;
+		padding: 2rem;
+		background: #f8fafc;
+		border-radius: 12px;
+		border: 2px solid #e2e8f0;
+		transition: all 0.3s ease;
+	}
+
+	.team-member:hover {
+		border-color: #2e7061;
+		transform: translateY(-4px);
+	}
+
+	.member-avatar {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+
+	.team-member h3 {
+		font-size: 1.2rem;
+		color: #2e7061;
+		margin: 0 0 1rem 0;
+		font-weight: 600;
+	}
+
+	.team-member p {
+		color: #64748b;
+		line-height: 1.6;
+		margin: 0;
+		font-size: 0.95rem;
+	}
+
+	.disclaimer {
+		background: #fef3c7;
+		border: 2px solid #f59e0b;
+		border-radius: 16px;
+		padding: 2rem;
+	}
+
+	.disclaimer h2 {
+		font-size: 1.5rem;
+		color: #92400e;
+		margin: 0 0 1rem 0;
+		font-weight: 600;
+	}
+
+	.disclaimer p {
+		color: #92400e;
+		line-height: 1.6;
+		margin-bottom: 1rem;
+		font-size: 0.95rem;
+	}
+
+	.disclaimer p:last-child {
+		margin-bottom: 0;
+	}
+
+	@media (max-width: 768px) {
+		.page-header h1 {
+			font-size: 2.5rem;
+		}
+
+		.content-grid {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		.coverage-areas {
+			grid-template-columns: 1fr;
+		}
+
+		.team-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.main-content,
+		.team-section {
+			padding: 2rem;
+		}
+	}
+</style>
